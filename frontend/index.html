@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CodeSage</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -30,15 +31,17 @@
         <section id="hero">
             <p class="badge">AI Programming Mentor</p>
             <h1>
-                Learn Programming.
+                Learn Programming.<br/>
                 <span>Don't Just Generate Code.</span>
             </h1>
             <p> CodeSage isn't an auto-complete tool.
                 It's an intelligent mentor that analyzes your code,
                 explains complex concepts, and 
                 guides you to find the solution yourself, building true understanding.</p>
-            <button>Start Learning</button>
-            <button>View Demo</button>
+            <div class="hero-buttons">
+                <button id="primary-btn">Start Learning</button>
+                <button id="secondary-btn">View Demo</button>
+            </div>
         </section>
 
        <!-- Technology Bar -->
@@ -59,86 +62,119 @@
         <section id="features">
             <h2>Engineered for Understanding</h2>
             <p>Tools built to enhance your cognitive process, not bypass it.</p>
+        <div class="feature-grid">
             <article>
+                <div style="font-size: 30px;">💡</div>
                 <h3>AI Code Review</h3>
                 <p>Get instant, actionable feedback on best practices, performance, and style without revealing the direct solution.</p>
             </article>
             <article>
+                <div style="font-size: 30px;">🧠</div>
                 <h3>Guided Learning</h3>
                 <p>Socratic questioning techniques prompt you to think deeply about the problem architecture.</p>
             </article>
             <article>
+                <div style="font-size: 30px;">📊</div>
                 <h3>Complexity Analysis</h3>
                 <p>Visualize Big O notation and memory usage to write more efficient, scalable algorithms.</p>
             </article>
             <article>
+                <div style="font-size: 30px;">🐞</div>
                 <h3>Bug Detection</h3>
                 <p>Identifies logical flaws and race conditions, providing hints rather than rewriting your code.</p>
             </article>
             <article>
+                <div style="font-size: 30px;">📈</div>
                 <h3>Progress Tracking</h3>
                 <p>Monitor your mastery of concepts over time with detailed analytics and skill trees.</p>
             </article>
             <article>
+                <div style="font-size: 30px;">🎯</div>
                 <h3>Personalized Mentor</h3>
                 <p>Adapts to your skill level and learning pace, ensuring challenges are perfectly balanced.</p>
             </article>
+        </div>
         </section>
 
-        <!-- Comparison -->
-        <section id="comparison">
+        <section id="compare-cta">
+
+        <h2>Why <span>CodeSage</span> is Different</h2>
+        <p>See why learning with guidance beats getting instant answers.</p>
+
+        <div class="compare-container">
+
+        <div id="comparison">
             <table>
                 <thead>
-                    <tr>
+                    <tr>    
                         <th>Traditional AI</th>
                         <th>CodeSage</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Gives answers</td>
-                        <td>Gives hints</td>
+                        <td>❌Gives answers</td>
+                        <td>✅Gives hints</td>
                     </tr>
                     <tr>
-                        <td>Solves problems</td>
-                        <td>Teaches thinking</td>
+                        <td>❌Solves problems</td>
+                        <td>✅Teaches thinking</td>
                     </tr>
                     <tr>
-                        <td>Temporary help</td>
-                        <td>Long-term growth</td>
+                        <td>❌Temporary help</td>
+                        <td>✅Long-term growth</td>
                     </tr>
                     <tr>
-                        <td>Doesn't remember</td>
-                        <td>Tracks progress</td>
+                        <td>❌Doesn't remember</td>
+                        <td>✅Tracks progress</td>
                     </tr>
                 </tbody>
             </table>
-            
-        </section>
+            </div>
 
-        <!--CTA Section-->
-        <section id="cta">
+        <div id="cta">
             <h2>Ready to become a better developer?</h2>
-            <p>Join thousands of developers who are mastering their craft with CodeSage's intelligent mentorship.</p>
+            <p>
+                Join thousands of developers who are mastering their craft
+                with CodeSage's intelligent mentorship.
+            </p>
             <button>Start Your Journey</button>
-        </section>
+        </div>
+
+    </div>
+
+    </section>
+        
     </main>
+
 
     <!-- Footer -->
     <footer>
-        <div>
-            <span>CodeSage</span>
-            <p>© 2024 CodeSage. Engineered for precision.</p>
-        </div>
-        <div>
-            <span>Resources</span>
-            <a href="#">GitHub</a>
-            <a href="#">Privacy</a>
-        </div>
-        <div>
-            <span>Company</span>
-            <a href="#">Contact</a>
+        <div class="footer-brand">
+        <h3>CodeSage</h3>
+        <p>Learn programming by understanding, not memorizing.</p>
+        <small>© 2026 CodeSage. All rights reserved.</small>
         </div>
 
+        <div class="footer-links">
+        <h4>Resources</h4>
+        <a href="#">GitHub</a>
+        <a href="#">Documentation</a>
+        <a href="#">Privacy Policy</a>
+        </div>
+
+        <div class="footer-links">
+        <h4>Company</h4>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+        <a href="#">Careers</a>
+        </div>
+
+        <div class="footer-links">
+        <h4>Social</h4>
+        <a href="#">LinkedIn</a>
+        <a href="#">Twitter</a>
+        <a href="#">Discord</a>
+        </div>
     </footer>
 </body>
