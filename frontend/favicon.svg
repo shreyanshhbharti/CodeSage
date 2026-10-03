@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="32" height="32" fill="none">
+  <!-- CodeSage Standalone Favicon Symbol -->
+  <style>
+    path { fill: #29483A; }
+    @media (prefers-color-scheme: dark) {
+      path { fill: #F7F3EA; }
+    }
+  </style>
+  <path d="M 30 10 H 85 V 40 H 45 V 70 H 10 V 30 Z" />
+  <path d="M 90 110 H 35 V 80 H 75 V 50 H 110 V 90 Z" />
+</svg>

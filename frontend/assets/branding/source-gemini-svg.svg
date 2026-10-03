@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="100%" height="100%" fill="none">
+  <!-- 
+    CodeSage Final Brand Mark - Direction A (The Offset Blocks)
+    Two perfectly inverted geometric masses defining a precise negative-space 'S'.
+  -->
+  <g fill="currentColor">
+    <!-- Top Left Block -->
+    <path d="M 10 10 
+             H 85 
+             V 40 
+             H 45 
+             V 70 
+             H 10 
+             Z" />
+             
+    <!-- Bottom Right Block (Inverted, Chamfered for Distinction) -->
+    <path d="M 110 110 
+             H 35 
+             V 80 
+             H 75 
+             V 50 
+             H 110 
+             Z" />
+             
+    <!-- 
+      Distinctive Edge Chamfers (Cutting the extreme outer corners) 
+      These paths modify the blunt corners into the distinctive technical silhouette 
+    -->
+    <polygon points="10,10 30,10 10,30" fill="white" style="mix-blend-mode: destination-out;"/>
+    <polygon points="110,110 90,110 110,90" fill="white" style="mix-blend-mode: destination-out;"/>
+  </g>
+</svg>

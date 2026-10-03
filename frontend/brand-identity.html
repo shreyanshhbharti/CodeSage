@@ -1,0 +1,1866 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeSage Brand Identity — Concept 3 Negative Space Refinements</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-warm: #F7F3EA;
+            --surface-warm: #FAF8F2;
+            --surface-card: #FFFFFF;
+            --primary: #4E6E58;
+            --primary-deep: #29483A;
+            --dark-ink: #20241F;
+            --text-ink: #20241F;
+            --text-body: #3E4540;
+            --text-muted: #6B756E;
+            --border-warm: rgba(41, 72, 58, 0.12);
+            --border-dark: rgba(247, 243, 234, 0.15);
+            --radius-card: 18px;
+            --radius-pill: 9999px;
+            --font-sans: 'Plus Jakarta Sans', -apple-system, sans-serif;
+            --font-serif: 'Playfair Display', Georgia, serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--bg-warm);
+            color: var(--text-ink);
+            font-family: var(--font-sans);
+            line-height: 1.6;
+            padding: 40px 24px 100px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .board-container {
+            max-width: 1240px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        .board-header {
+            border-bottom: 1px solid var(--border-warm);
+            padding-bottom: 40px;
+            margin-bottom: 50px;
+        }
+
+        .brand-meta-strip {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+        }
+
+        .meta-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(41, 72, 58, 0.06);
+            padding: 6px 14px;
+            border-radius: 6px;
+            border: 1px solid var(--border-warm);
+        }
+
+        .meta-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--primary);
+        }
+
+        .board-title {
+            font-family: var(--font-serif);
+            font-size: 2.75rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: var(--primary-deep);
+            margin-bottom: 14px;
+            line-height: 1.15;
+        }
+
+        .board-subtitle {
+            font-size: 1.15rem;
+            color: var(--text-body);
+            max-width: 780px;
+            line-height: 1.65;
+        }
+
+        /* Design Tenet Pills */
+        .tenets-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+            margin-top: 32px;
+        }
+
+        .tenet-card {
+            background: var(--surface-card);
+            border: 1px solid var(--border-warm);
+            border-radius: 12px;
+            padding: 16px 20px;
+        }
+
+        .tenet-label {
+            font-family: var(--font-mono);
+            font-size: 0.6875rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+
+        .tenet-val {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--primary-deep);
+        }
+
+        /* Variations Showcase Grid */
+        .variations-section {
+            margin-bottom: 80px;
+        }
+
+        .section-headline-wrap {
+            margin-bottom: 36px;
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .section-title {
+            font-family: var(--font-serif);
+            font-size: 1.85rem;
+            font-weight: 600;
+            color: var(--primary-deep);
+        }
+
+        .section-note {
+            font-family: var(--font-mono);
+            font-size: 0.8125rem;
+            color: var(--text-muted);
+        }
+
+        /* Variation Detailed Card */
+        .variation-card {
+            background: var(--surface-card);
+            border: 1px solid var(--border-warm);
+            border-radius: var(--radius-card);
+            padding: 40px;
+            margin-bottom: 48px;
+            box-shadow: 0 4px 20px rgba(41, 72, 58, 0.03);
+        }
+
+        .var-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 32px;
+            border-bottom: 1px solid rgba(41, 72, 58, 0.08);
+            padding-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .var-badge {
+            font-family: var(--font-mono);
+            font-size: 0.6875rem;
+            font-weight: 600;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            padding: 4px 10px;
+            background: var(--primary-deep);
+            color: var(--bg-warm);
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+
+        .var-name {
+            font-size: 1.45rem;
+            font-weight: 700;
+            color: var(--primary-deep);
+            letter-spacing: -0.015em;
+        }
+
+        .var-subtitle {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .var-rating {
+            text-align: right;
+            font-family: var(--font-mono);
+            font-size: 0.8125rem;
+            color: var(--text-muted);
+        }
+
+        .var-rating strong {
+            color: var(--primary);
+            font-size: 1.05rem;
+        }
+
+        /* Display Quadrant */
+        .var-display-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 32px;
+            margin-bottom: 32px;
+        }
+
+        @media (max-width: 960px) {
+            .var-display-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Swatches (Light vs Dark) */
+        .swatches-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .swatch-box {
+            border-radius: 14px;
+            padding: 36px 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 220px;
+            position: relative;
+            transition: transform 0.2s ease;
+        }
+
+        .swatch-box:hover {
+            transform: translateY(-2px);
+        }
+
+        .swatch-cream {
+            background: var(--bg-warm);
+            border: 1px solid var(--border-warm);
+            color: var(--primary-deep);
+        }
+
+        .swatch-dark {
+            background: var(--primary-deep);
+            border: 1px solid var(--border-dark);
+            color: var(--bg-warm);
+        }
+
+        .swatch-ink {
+            background: var(--dark-ink);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: #FFFFFF;
+        }
+
+        .swatch-icon-wrap {
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+        }
+
+        .swatch-icon-wrap svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .swatch-label {
+            font-family: var(--font-mono);
+            font-size: 0.6875rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.7;
+        }
+
+        /* Wordmark Lockup Preview */
+        .lockup-preview-card {
+            background: #FDFCFA;
+            border: 1px solid var(--border-warm);
+            border-radius: 14px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 24px;
+        }
+
+        .brand-lockup-row {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .lockup-icon {
+            width: 44px;
+            height: 44px;
+            flex-shrink: 0;
+            color: var(--primary-deep);
+        }
+
+        .lockup-icon svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .lockup-wordmark {
+            font-size: 1.85rem;
+            font-weight: 700;
+            letter-spacing: -0.035em;
+            color: var(--text-ink);
+            display: flex;
+            align-items: baseline;
+        }
+
+        .wordmark-subtext {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            margin-top: 2px;
+        }
+
+        /* Inverted Lockup Row */
+        .brand-lockup-dark {
+            background: var(--primary-deep);
+            padding: 20px 24px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            color: var(--bg-warm);
+        }
+
+        .brand-lockup-dark .lockup-icon {
+            color: var(--bg-warm);
+            width: 36px;
+            height: 36px;
+        }
+
+        .brand-lockup-dark .lockup-wordmark {
+            color: var(--bg-warm);
+            font-size: 1.45rem;
+        }
+
+        /* Size Ladder Test */
+        .size-ladder-strip {
+            background: var(--surface-warm);
+            border: 1px solid var(--border-warm);
+            border-radius: 14px;
+            padding: 24px 30px;
+            margin-top: 20px;
+        }
+
+        .ladder-title {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: var(--text-muted);
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .ladder-row {
+            display: flex;
+            align-items: flex-end;
+            gap: 36px;
+            flex-wrap: wrap;
+        }
+
+        .ladder-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .ladder-glyph {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-deep);
+            background: var(--surface-card);
+            border: 1px solid var(--border-warm);
+            border-radius: 8px;
+            padding: 8px;
+        }
+
+        .ladder-glyph svg {
+            display: block;
+        }
+
+        .glyph-128 { width: 128px; height: 128px; }
+        .glyph-64 { width: 64px; height: 64px; }
+        .glyph-48 { width: 48px; height: 48px; }
+        .glyph-32 { width: 32px; height: 32px; }
+        .glyph-24 { width: 24px; height: 24px; }
+        .glyph-16 { width: 16px; height: 16px; }
+
+        .ladder-label {
+            font-family: var(--font-mono);
+            font-size: 0.6875rem;
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+
+        /* Technical Description & Philosophy */
+        .var-notes-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-top: 24px;
+            background: #FAF7F0;
+            border: 1px solid var(--border-warm);
+            border-radius: 12px;
+            padding: 20px 24px;
+        }
+
+        @media (max-width: 768px) {
+            .var-notes-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .note-block h5 {
+            font-family: var(--font-mono);
+            font-size: 0.6875rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--primary);
+            margin-bottom: 6px;
+        }
+
+        .note-block p {
+            font-size: 0.875rem;
+            color: var(--text-body);
+            line-height: 1.55;
+        }
+
+        /* Side by Side Comparative Grid */
+        .comparison-matrix {
+            background: var(--surface-card);
+            border: 1px solid var(--border-warm);
+            border-radius: var(--radius-card);
+            padding: 40px;
+            margin-bottom: 60px;
+        }
+
+        .matrix-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+            gap: 20px;
+            margin-top: 24px;
+        }
+
+        .matrix-card {
+            border: 1px solid var(--border-warm);
+            border-radius: 12px;
+            padding: 24px 16px;
+            text-align: center;
+            background: var(--bg-warm);
+            transition: all 0.2s ease;
+        }
+
+        .matrix-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(41, 72, 58, 0.08);
+        }
+
+        .matrix-icon {
+            width: 56px;
+            height: 56px;
+            margin: 0 auto 16px;
+            color: var(--primary-deep);
+        }
+
+        .matrix-icon svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .matrix-name {
+            font-size: 0.875rem;
+            font-weight: 700;
+            color: var(--primary-deep);
+            margin-bottom: 4px;
+        }
+
+        .matrix-type {
+            font-family: var(--font-mono);
+            font-size: 0.6875rem;
+            color: var(--text-muted);
+        }
+
+        /* 16px Stress Test Row */
+        .stress-test-strip {
+            margin-top: 24px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border-warm);
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .stress-cell {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .stress-icon-16 {
+            width: 16px;
+            height: 16px;
+            color: var(--primary-deep);
+        }
+
+        .stress-label {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        /* Live In-Context Navbar Preview */
+        .context-preview-section {
+            background: var(--primary-deep);
+            color: var(--bg-warm);
+            border-radius: var(--radius-card);
+            padding: 50px 40px;
+            margin-bottom: 80px;
+        }
+
+        .context-title {
+            font-family: var(--font-serif);
+            font-size: 2rem;
+            margin-bottom: 12px;
+        }
+
+        .context-desc {
+            color: rgba(247, 243, 234, 0.8);
+            font-size: 1rem;
+            max-width: 680px;
+            margin-bottom: 40px;
+        }
+
+        /* Mock Floating Navbar */
+        .mock-floating-nav {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: rgba(247, 243, 234, 0.95);
+            border: 1px solid rgba(41, 72, 58, 0.15);
+            border-radius: 20px;
+            height: 68px;
+            padding: 0 28px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: var(--text-ink);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .mock-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .mock-symbol {
+            width: 28px;
+            height: 28px;
+            color: var(--primary-deep);
+        }
+
+        .mock-brand-name {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text-ink);
+        }
+
+        .mock-center-links {
+            display: flex;
+            gap: 32px;
+            font-size: 0.9375rem;
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+
+        .mock-cta {
+            background: #4E6E58;
+            color: #F7F3EA;
+            font-size: 0.875rem;
+            font-weight: 700;
+            padding: 10px 20px;
+            border-radius: 11px;
+        }
+
+        /* Quick Action Bar */
+        .bottom-action-bar {
+            text-align: center;
+            padding: 40px 0;
+            font-family: var(--font-mono);
+            font-size: 0.8125rem;
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="board-container">
+        
+        <!-- Header -->
+        <header class="board-header">
+            <div class="brand-meta-strip">
+                <div class="meta-tag">
+                    <span class="meta-dot"></span>
+                    <span>CodeSage Brand Identity System</span>
+                </div>
+                <div>Concept 3 Direction • Negative Space S Refinements</div>
+                <div>Monochrome / Architectural</div>
+            </div>
+
+            <h1 class="board-title">Concept 3: Negative Space & Interlocking Logic</h1>
+            <p class="board-subtitle">
+                A focused exploration of six refined evolutions derived from Concept 3. 
+                Each direction embodies <strong>Code + Wisdom + Learning + Problem Solving</strong> through a sophisticated geometric "S" 
+                formed by interlocking structures, negative-space conduits, or complementary logic paths.
+            </p>
+
+            <div class="tenets-grid">
+                <div class="tenet-card">
+                    <div class="tenet-label">Core Symbol</div>
+                    <div class="tenet-val">Pure Geometric "S"</div>
+                </div>
+                <div class="tenet-card">
+                    <div class="tenet-label">Primary Color</div>
+                    <div class="tenet-val">#4E6E58 (Sage) / #29483A (Deep)</div>
+                </div>
+                <div class="tenet-card">
+                    <div class="tenet-label">Contrast Ground</div>
+                    <div class="tenet-val">#F7F3EA (Warm Ivory)</div>
+                </div>
+                <div class="tenet-card">
+                    <div class="tenet-label">Geometry Rule</div>
+                    <div class="tenet-val">Zero Gradients • No Clichés</div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Comparative Matrix -->
+        <section class="comparison-matrix">
+            <div class="section-headline-wrap">
+                <h2 class="section-title">Comparative Lineup — Six Evolutions of Concept 3</h2>
+                <div class="section-note">Hover to inspect silhouette balance</div>
+            </div>
+
+            <div class="matrix-grid">
+
+                <div class="matrix-card">
+                    <div class="matrix-icon"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Top Anchor Form -->
+  <path d="M 22 16 H 74 C 77.31 16 80 18.69 80 22 V 42 C 80 44.21 78.21 46 76 46 H 48 C 43.58 46 40 49.58 40 54 V 56 H 24 C 21.79 56 20 54.21 20 52 V 22 C 20 18.69 22.69 16 26 16 Z" fill="currentColor"/>
+  <!-- Bottom Anchor Form (180deg Rotational Symmetry) -->
+  <path d="M 78 84 H 26 C 22.69 84 20 81.31 20 78 V 58 C 20 55.79 21.79 54 24 54 H 52 C 56.42 54 60 50.42 60 46 V 44 H 76 C 78.21 44 80 45.79 80 48 V 78 C 80 81.31 77.31 84 74 84 Z" fill="currentColor"/>
+</svg></div>
+                    <div class="matrix-name">Variation 1</div>
+                    <div class="matrix-type">Negative Space Architectural S</div>
+                </div>
+    
+                <div class="matrix-card">
+                    <div class="matrix-icon"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Upper Path: sweeps from top-right, down left flank, and hooks across center -->
+  <path d="M 76 22 H 34 C 25.16 22 18 29.16 18 38 V 44 C 18 50.63 23.37 56 30 56 H 74 C 77.31 56 80 58.69 80 62 V 64 C 80 67.31 77.31 70 74 70 H 46" 
+        fill="none" stroke="currentColor" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Lower Path (Rotated 180deg): sweeps from bottom-left, up right flank, and hooks across center -->
+  <path d="M 24 78 H 66 C 74.84 78 82 70.84 82 62 V 56 C 82 49.37 76.63 44 70 44 H 26 C 22.69 44 20 41.31 20 38 V 36 C 20 32.69 22.69 30 26 30 H 54" 
+        fill="none" stroke="currentColor" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></div>
+                    <div class="matrix-name">Variation 2</div>
+                    <div class="matrix-type">Interlocking Logic Flow (Variation A)</div>
+                </div>
+    
+                <div class="matrix-card">
+                    <div class="matrix-icon"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="
+    M 26 14 H 74 C 80.63 14 86 19.37 86 26 V 74 C 86 80.63 80.63 86 74 86 H 26 C 19.37 86 14 80.63 14 74 V 26 C 14 19.37 19.37 14 26 14 Z
+    M 14 38 H 64 C 67.31 38 70 40.69 70 44 C 70 47.31 67.31 50 64 50 H 14 V 38 Z
+    M 86 50 H 36 C 32.69 50 30 52.69 30 56 C 30 59.31 32.69 62 36 62 H 86 V 50 Z
+  " fill="currentColor"/>
+</svg></div>
+                    <div class="matrix-name">Variation 3</div>
+                    <div class="matrix-type">Modular Negative Conduit (Variation B)</div>
+                </div>
+    
+                <div class="matrix-card">
+                    <div class="matrix-icon"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Top-Left Form: flat top, rounded outer corner, 45-deg inner chamfer -->
+  <path d="M 24 16 H 74 C 77.31 16 80 18.69 80 22 V 32 C 80 34.21 78.21 36 76 36 H 54 L 32 58 H 22 C 19.79 58 18 56.21 18 54 V 22 C 18 18.69 20.69 16 24 16 Z" fill="currentColor"/>
+  <!-- Bottom-Right Form (180deg Rotational Symmetry) -->
+  <path d="M 76 84 H 26 C 22.69 84 20 81.31 20 78 V 68 C 20 65.79 21.79 64 24 64 H 46 L 68 42 H 78 C 80.21 42 82 43.79 82 46 V 78 C 82 81.31 79.31 84 76 84 Z" fill="currentColor"/>
+</svg></div>
+                    <div class="matrix-name">Variation 4</div>
+                    <div class="matrix-type">45° Negative Slip-Plane (Variation C)</div>
+                </div>
+    
+                <div class="matrix-card">
+                    <div class="matrix-icon"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Upper Logic Bracket -->
+  <path d="M 22 20 H 74 C 77.31 20 80 22.69 80 26 V 46 C 80 48.21 78.21 50 76 50 H 52 C 48.69 50 46 52.69 46 56 V 60 H 34 C 31.79 60 30 58.21 30 56 V 34 C 30 31.79 31.79 30 34 30 H 66 V 26 C 66 23.79 64.21 22 62 22 H 22 Z" fill="currentColor"/>
+  <!-- Lower Logic Bracket (180deg Mirrored Rotation) -->
+  <path d="M 78 80 H 26 C 22.69 80 20 77.31 20 74 V 54 C 20 51.79 21.79 50 24 50 H 48 C 51.31 50 54 47.31 54 44 V 40 H 66 C 68.21 40 70 41.79 70 44 V 66 C 70 68.21 68.21 70 66 70 H 34 V 74 C 34 76.21 35.79 78 38 78 H 78 Z" fill="currentColor"/>
+</svg></div>
+                    <div class="matrix-name">Variation 5</div>
+                    <div class="matrix-type">Abstract Code Execution Path (Variation D)</div>
+                </div>
+    
+                <div class="matrix-card">
+                    <div class="matrix-icon"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Upper Loop -->
+  <path d="M 26 28 C 26 20.27 32.27 14 40 14 H 66 C 74.84 14 82 21.16 82 30 C 82 38.84 74.84 46 66 46 H 42 C 34.27 46 28 52.27 28 60 C 28 67.73 34.27 74 42 74 H 74" 
+        fill="none" stroke="currentColor" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Optical Negative Notch separating the loops at the center inflection -->
+  <line x1="50" y1="39" x2="50" y2="53" stroke="#F7F3EA" stroke-width="4" stroke-linecap="round"/>
+</svg></div>
+                    <div class="matrix-name">Variation 6</div>
+                    <div class="matrix-type">Folded Geometric S with Optical Notch</div>
+                </div>
+    
+            </div>
+
+            <!-- Stress Test Row -->
+            <div class="stress-test-strip">
+                <span class="ladder-label">16PX FAVICON / STATUS STRESS TEST:</span>
+
+                <div class="stress-cell">
+                    <div class="stress-icon-16"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Top Anchor Form -->
+  <path d="M 22 16 H 74 C 77.31 16 80 18.69 80 22 V 42 C 80 44.21 78.21 46 76 46 H 48 C 43.58 46 40 49.58 40 54 V 56 H 24 C 21.79 56 20 54.21 20 52 V 22 C 20 18.69 22.69 16 26 16 Z" fill="currentColor"/>
+  <!-- Bottom Anchor Form (180deg Rotational Symmetry) -->
+  <path d="M 78 84 H 26 C 22.69 84 20 81.31 20 78 V 58 C 20 55.79 21.79 54 24 54 H 52 C 56.42 54 60 50.42 60 46 V 44 H 76 C 78.21 44 80 45.79 80 48 V 78 C 80 81.31 77.31 84 74 84 Z" fill="currentColor"/>
+</svg></div>
+                    <span class="stress-label">Variation 1</span>
+                </div>
+    
+                <div class="stress-cell">
+                    <div class="stress-icon-16"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Upper Path: sweeps from top-right, down left flank, and hooks across center -->
+  <path d="M 76 22 H 34 C 25.16 22 18 29.16 18 38 V 44 C 18 50.63 23.37 56 30 56 H 74 C 77.31 56 80 58.69 80 62 V 64 C 80 67.31 77.31 70 74 70 H 46" 
+        fill="none" stroke="currentColor" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Lower Path (Rotated 180deg): sweeps from bottom-left, up right flank, and hooks across center -->
+  <path d="M 24 78 H 66 C 74.84 78 82 70.84 82 62 V 56 C 82 49.37 76.63 44 70 44 H 26 C 22.69 44 20 41.31 20 38 V 36 C 20 32.69 22.69 30 26 30 H 54" 
+        fill="none" stroke="currentColor" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></div>
+                    <span class="stress-label">Variation 2</span>
+                </div>
+    
+                <div class="stress-cell">
+                    <div class="stress-icon-16"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="
+    M 26 14 H 74 C 80.63 14 86 19.37 86 26 V 74 C 86 80.63 80.63 86 74 86 H 26 C 19.37 86 14 80.63 14 74 V 26 C 14 19.37 19.37 14 26 14 Z
+    M 14 38 H 64 C 67.31 38 70 40.69 70 44 C 70 47.31 67.31 50 64 50 H 14 V 38 Z
+    M 86 50 H 36 C 32.69 50 30 52.69 30 56 C 30 59.31 32.69 62 36 62 H 86 V 50 Z
+  " fill="currentColor"/>
+</svg></div>
+                    <span class="stress-label">Variation 3</span>
+                </div>
+    
+                <div class="stress-cell">
+                    <div class="stress-icon-16"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Top-Left Form: flat top, rounded outer corner, 45-deg inner chamfer -->
+  <path d="M 24 16 H 74 C 77.31 16 80 18.69 80 22 V 32 C 80 34.21 78.21 36 76 36 H 54 L 32 58 H 22 C 19.79 58 18 56.21 18 54 V 22 C 18 18.69 20.69 16 24 16 Z" fill="currentColor"/>
+  <!-- Bottom-Right Form (180deg Rotational Symmetry) -->
+  <path d="M 76 84 H 26 C 22.69 84 20 81.31 20 78 V 68 C 20 65.79 21.79 64 24 64 H 46 L 68 42 H 78 C 80.21 42 82 43.79 82 46 V 78 C 82 81.31 79.31 84 76 84 Z" fill="currentColor"/>
+</svg></div>
+                    <span class="stress-label">Variation 4</span>
+                </div>
+    
+                <div class="stress-cell">
+                    <div class="stress-icon-16"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Upper Logic Bracket -->
+  <path d="M 22 20 H 74 C 77.31 20 80 22.69 80 26 V 46 C 80 48.21 78.21 50 76 50 H 52 C 48.69 50 46 52.69 46 56 V 60 H 34 C 31.79 60 30 58.21 30 56 V 34 C 30 31.79 31.79 30 34 30 H 66 V 26 C 66 23.79 64.21 22 62 22 H 22 Z" fill="currentColor"/>
+  <!-- Lower Logic Bracket (180deg Mirrored Rotation) -->
+  <path d="M 78 80 H 26 C 22.69 80 20 77.31 20 74 V 54 C 20 51.79 21.79 50 24 50 H 48 C 51.31 50 54 47.31 54 44 V 40 H 66 C 68.21 40 70 41.79 70 44 V 66 C 70 68.21 68.21 70 66 70 H 34 V 74 C 34 76.21 35.79 78 38 78 H 78 Z" fill="currentColor"/>
+</svg></div>
+                    <span class="stress-label">Variation 5</span>
+                </div>
+    
+                <div class="stress-cell">
+                    <div class="stress-icon-16"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Upper Loop -->
+  <path d="M 26 28 C 26 20.27 32.27 14 40 14 H 66 C 74.84 14 82 21.16 82 30 C 82 38.84 74.84 46 66 46 H 42 C 34.27 46 28 52.27 28 60 C 28 67.73 34.27 74 42 74 H 74" 
+        fill="none" stroke="currentColor" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Optical Negative Notch separating the loops at the center inflection -->
+  <line x1="50" y1="39" x2="50" y2="53" stroke="#F7F3EA" stroke-width="4" stroke-linecap="round"/>
+</svg></div>
+                    <span class="stress-label">Variation 6</span>
+                </div>
+    
+            </div>
+        </section>
+
+        <!-- Detailed Variation Sections -->
+        <section class="variations-section">
+
+            <!-- Variation 1: The Interlocking Monolith -->
+            <article class="variation-card" id="opt-1">
+                <div class="var-header">
+                    <div>
+                        <span class="var-badge">Variation B / C</span>
+                        <h3 class="var-name">Variation 1: The Interlocking Monolith</h3>
+                        <div class="var-subtitle">Negative Space Architectural S</div>
+                    </div>
+                    <div class="var-rating">
+                        Small-scale legibility rating:<br>
+                        <strong>Exceptional (10/10) — The bold silhouette preserves high-contrast readability even at 16px favicon size.</strong>
+                    </div>
+                </div>
+
+                <div class="var-display-grid">
+                    <!-- Swatches: Dark on Cream & Cream on Dark -->
+                    <div class="swatches-row">
+                        <!-- Dark on Cream -->
+                        <div class="swatch-box swatch-cream">
+                            <div class="swatch-icon-wrap">
+                                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Top Anchor Form -->
+  <path d="M 22 16 H 74 C 77.31 16 80 18.69 80 22 V 42 C 80 44.21 78.21 46 76 46 H 48 C 43.58 46 40 49.58 40 54 V 56 H 24 C 21.79 56 20 54.21 20 52 V 22 C 20 18.69 22.69 16 26 16 Z" fill="currentColor"/>
+  <!-- Bottom Anchor Form (180deg Rotational Symmetry) -->
+  <path d="M 78 84 H 26 C 22.69 84 20 81.31 20 78 V 58 C 20 55.79 21.79 54 24 54 H 52 C 56.42 54 60 50.42 60 46 V 44 H 76 C 78.21 44 80 45.79 80 48 V 78 C 80 81.31 77.31 84 74 84 Z" fill="currentColor"/>
+</svg>
+                            </div>
+                            <span class="swatch-label">Dark-on-Cream (#29483A on #F7F3EA)</span>
+                        </div>
+
+                        <!-- Cream on Dark -->
+                        <div class="swatch-box swatch-dark">
+                            <div class="swatch-icon-wrap">
+                                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Top Anchor Form -->
+  <path d="M 22 16 H 74 C 77.31 16 80 18.69 80 22 V 42 C 80 44.21 78.21 46 76 46 H 48 C 43.58 46 40 49.58 40 54 V 56 H 24 C 21.79 56 20 54.21 20 52 V 22 C 20 18.69 22.69 16 26 16 Z" fill="currentColor"/>
+  <!-- Bottom Anchor Form (180deg Rotational Symmetry) -->
+  <path d="M 78 84 H 26 C 22.69 84 20 81.31 20 78 V 58 C 20 55.79 21.79 54 24 54 H 52 C 56.42 54 60 50.42 60 46 V 44 H 76 C 78.21 44 80 45.79 80 48 V 78 C 80 81.31 77.31 84 74 84 Z" fill="currentColor"/>
+</svg>
+                            </div>
+                            <span class="swatch-label">Cream-on-Dark (#F7F3EA on #29483A)</span>
+                        </div>
+                    </div>
+
+                    <!-- Lockup Previews -->
+                    <div class="lockup-preview-card">
+                        <div>
+                            <span class="ladder-label" style="display:block; margin-bottom: 12px;">PRIMARY WORDMARK LOCKUP</span>
+                            <div class="brand-lockup-row">
+                                <div class="lockup-icon">
+                                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Top Anchor Form -->
+  <path d="M 22 16 H 74 C 77.31 16 80 18.69 80 22 V 42 C 80 44.21 78.21 46 76 46 H 48 C 43.58 46 40 49.58 40 54 V 56 H 24 C 21.79 56 20 54.21 20 52 V 22 C 20 18.69 22.69 16 26 16 Z" fill="currentColor"/>
+  <!-- Bottom Anchor Form (180deg Rotational Symmetry) -->
+  <path d="M 78 84 H 26 C 22.69 84 20 81.31 20 78 V 58 C 20 55.79 21.79 54 24 54 H 52 C 56.42 54 60 50.42 60 46 V 44 H 76 C 78.21 44 80 45.79 80 48 V 78 C 80 81.31 77.31 84 74 84 Z" fill="currentColor"/>
+</svg>
+                                </div>
+                                <div>
+                                    <div class="lockup-wordmark">CodeSage</div>
+                                    <div class="wordmark-subtext">AI Programming Mentor</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <span class="ladder-label" style="display:block; margin-bottom: 10px;">INVERTED NAV / EMBLEM LOCKUP</span>
+                            <div class="brand-lockup-dark">
+                                <div class="lockup-icon">
+                                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Top Anchor Form -->
+  <path d="M 22 16 H 74 C 77.31 16 80 18.69 80 22 V 42 C 80 44.21 78.21 46 76 46 H 48 C 43.58 46 40 49.58 40 54 V 56 H 24 C 21.79 56 20 54.21 20 52 V 22 C 20 18.69 22.69 16 26 16 Z" fill="currentColor"/>
+  <!-- Bottom Anchor Form (180deg Rotational Symmetry) -->
+  <path d="M 78 84 H 26 C 22.69 84 20 81.31 20 78 V 58 C 20 55.79 21.79 54 24 54 H 52 C 56.42 54 60 50.42 60 46 V 44 H 76 C 78.21 44 80 45.79 80 48 V 78 C 80 81.31 77.31 84 74 84 Z" fill="currentColor"/>
+</svg>
+                                </div>
+                                <div class="lockup-wordmark">CodeSage</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Size Ladder Test -->
+                <div class="size-ladder-strip">
+                    <div class="ladder-title">
+                        <span>Small-Size Legibility Verification Ladder</span>
+                        <span>128px • 64px • 48px • 32px • 24px • 16px</span>
+                    </div>
+
+                    <div class="ladder-row">
+                        <div class="ladder-item">
+                            <div class="ladder-glyph glyph-128"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Top Anchor Form -->
+  <path d="M 22 16 H 74 C 77.31 16 80 18.69 80 22 V 42 C 80 44.21 78.21 46 76 46 H 48 C 43.58 46 40 49.58 40 54 V 56 H 24 C 21.79 56 20 54.21 20 52 V 22 C 20 18.69 22.69 16 26 16 Z" fill="currentColor"/>
+  <!-- Bottom Anchor Form (180deg Rotational Symmetry) -->
+  <path d="M 78 84 H 26 C 22.69 84 20 81.31 20 78 V 58 C 20 55.79 21.79 54 24 54 H 52 C 56.42 54 60 50.42 60 46 V 44 H 76 C 78.21 44 80 45.79 80 48 V 78 C 80 81.31 77.31 84 74 84 Z" fill="currentColor"/>
+</svg></div>
+                            <span class="ladder-label">128px</span>
+                        </div>
+                        <div class="ladder-item">
+                            <div class="ladder-glyph glyph-64"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Top Anchor Form -->
+  <path d="M 22 16 H 74 C 77.31 16 80 18.69 80 22 V 42 C 80 44.21 78.21 46 76 46 H 48 C 43.58 46 40 49.58 40 54 V 56 H 24 C 21.79 56 20 54.21 20 52 V 22 C 20 18.69 22.69 16 26 16 Z" fill="currentColor"/>
+  <!-- Bottom Anchor Form (180deg Rotational Symmetry) -->
+  <path d="M 78 84 H 26 C 22.69 84 20 81.31 20 78 V 58 C 20 55.79 21.79 54 24 54 H 52 C 56.42 54 60 50.42 60 46 V 44 H 76 C 78.21 44 80 45.79 80 48 V 78 C 80 81.31 77.31 84 74 84 Z" fill="currentColor"/>
+</svg></div>
+                            <span class="ladder-label">64px</span>
+                        </div>
+                        <div class="ladder-item">
+                            <div class="ladder-glyph glyph-48"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Top Anchor Form -->
+  <path d="M 22 16 H 74 C 77.31 16 80 18.69 80 22 V 42 C 80 44.21 78.21 46 76 46 H 48 C 43.58 46 40 49.58 40 54 V 56 H 24 C 21.79 56 20 54.21 20 52 V 22 C 20 18.69 22.69 16 26 16 Z" fill="currentColor"/>
+  <!-- Bottom Anchor Form (180deg Rotational Symmetry) -->
+  <path d="M 78 84 H 26 C 22.69 84 20 81.31 20 78 V 58 C 20 55.79 21.79 54 24 54 H 52 C 56.42 54 60 50.42 60 46 V 44 H 76 C 78.21 44 80 45.79 80 48 V 78 C 80 81.31 77.31 84 74 84 Z" fill="currentColor"/>
+</svg></div>
+                            <span class="ladder-label">48px</span>
+                        </div>
+                        <div class="ladder-item">
+                            <div class="ladder-glyph glyph-32"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Top Anchor Form -->
+  <path d="M 22 16 H 74 C 77.31 16 80 18.69 80 22 V 42 C 80 44.21 78.21 46 76 46 H 48 C 43.58 46 40 49.58 40 54 V 56 H 24 C 21.79 56 20 54.21 20 52 V 22 C 20 18.69 22.69 16 26 16 Z" fill="currentColor"/>
+  <!-- Bottom Anchor Form (180deg Rotational Symmetry) -->
+  <path d="M 78 84 H 26 C 22.69 84 20 81.31 20 78 V 58 C 20 55.79 21.79 54 24 54 H 52 C 56.42 54 60 50.42 60 46 V 44 H 76 C 78.21 44 80 45.79 80 48 V 78 C 80 81.31 77.31 84 74 84 Z" fill="currentColor"/>
+</svg></div>
+                            <span class="ladder-label">32px</span>
+                        </div>
+                        <div class="ladder-item">
+                            <div class="ladder-glyph glyph-24"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Top Anchor Form -->
+  <path d="M 22 16 H 74 C 77.31 16 80 18.69 80 22 V 42 C 80 44.21 78.21 46 76 46 H 48 C 43.58 46 40 49.58 40 54 V 56 H 24 C 21.79 56 20 54.21 20 52 V 22 C 20 18.69 22.69 16 26 16 Z" fill="currentColor"/>
+  <!-- Bottom Anchor Form (180deg Rotational Symmetry) -->
+  <path d="M 78 84 H 26 C 22.69 84 20 81.31 20 78 V 58 C 20 55.79 21.79 54 24 54 H 52 C 56.42 54 60 50.42 60 46 V 44 H 76 C 78.21 44 80 45.79 80 48 V 78 C 80 81.31 77.31 84 74 84 Z" fill="currentColor"/>
+</svg></div>
+                            <span class="ladder-label">24px</span>
+                        </div>
+                        <div class="ladder-item">
+                            <div class="ladder-glyph glyph-16"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Top Anchor Form -->
+  <path d="M 22 16 H 74 C 77.31 16 80 18.69 80 22 V 42 C 80 44.21 78.21 46 76 46 H 48 C 43.58 46 40 49.58 40 54 V 56 H 24 C 21.79 56 20 54.21 20 52 V 22 C 20 18.69 22.69 16 26 16 Z" fill="currentColor"/>
+  <!-- Bottom Anchor Form (180deg Rotational Symmetry) -->
+  <path d="M 78 84 H 26 C 22.69 84 20 81.31 20 78 V 58 C 20 55.79 21.79 54 24 54 H 52 C 56.42 54 60 50.42 60 46 V 44 H 76 C 78.21 44 80 45.79 80 48 V 78 C 80 81.31 77.31 84 74 84 Z" fill="currentColor"/>
+</svg></div>
+                            <span class="ladder-label">16px</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Architectural Notes -->
+                <div class="var-notes-grid">
+                    <div class="note-block">
+                        <h5>Geometric Architecture</h5>
+                        <p>Two solid sculpted masses separated by a continuous 11px negative space conduit that carves out an unmistakable, confident 'S'.</p>
+                    </div>
+                    <div class="note-block">
+                        <h5>Subtle Programming Homage</h5>
+                        <p>Conveys intellectual solidity, structure, and foundational understanding. The negative space acts as the thinking path between two balanced code constructs.</p>
+                    </div>
+                </div>
+            </article>
+    
+            <!-- Variation 2: Dual Interlocking Paths -->
+            <article class="variation-card" id="opt-2">
+                <div class="var-header">
+                    <div>
+                        <span class="var-badge">Variation A</span>
+                        <h3 class="var-name">Variation 2: Dual Interlocking Paths</h3>
+                        <div class="var-subtitle">Interlocking Logic Flow (Variation A)</div>
+                    </div>
+                    <div class="var-rating">
+                        Small-scale legibility rating:<br>
+                        <strong>Very High (9.5/10) — Consistent line weight prevents stroke collapse; open apertures remain crisp at 24px and 16px.</strong>
+                    </div>
+                </div>
+
+                <div class="var-display-grid">
+                    <!-- Swatches: Dark on Cream & Cream on Dark -->
+                    <div class="swatches-row">
+                        <!-- Dark on Cream -->
+                        <div class="swatch-box swatch-cream">
+                            <div class="swatch-icon-wrap">
+                                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Upper Path: sweeps from top-right, down left flank, and hooks across center -->
+  <path d="M 76 22 H 34 C 25.16 22 18 29.16 18 38 V 44 C 18 50.63 23.37 56 30 56 H 74 C 77.31 56 80 58.69 80 62 V 64 C 80 67.31 77.31 70 74 70 H 46" 
+        fill="none" stroke="currentColor" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Lower Path (Rotated 180deg): sweeps from bottom-left, up right flank, and hooks across center -->
+  <path d="M 24 78 H 66 C 74.84 78 82 70.84 82 62 V 56 C 82 49.37 76.63 44 70 44 H 26 C 22.69 44 20 41.31 20 38 V 36 C 20 32.69 22.69 30 26 30 H 54" 
+        fill="none" stroke="currentColor" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                            </div>
+                            <span class="swatch-label">Dark-on-Cream (#29483A on #F7F3EA)</span>
+                        </div>
+
+                        <!-- Cream on Dark -->
+                        <div class="swatch-box swatch-dark">
+                            <div class="swatch-icon-wrap">
+                                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Upper Path: sweeps from top-right, down left flank, and hooks across center -->
+  <path d="M 76 22 H 34 C 25.16 22 18 29.16 18 38 V 44 C 18 50.63 23.37 56 30 56 H 74 C 77.31 56 80 58.69 80 62 V 64 C 80 67.31 77.31 70 74 70 H 46" 
+        fill="none" stroke="currentColor" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Lower Path (Rotated 180deg): sweeps from bottom-left, up right flank, and hooks across center -->
+  <path d="M 24 78 H 66 C 74.84 78 82 70.84 82 62 V 56 C 82 49.37 76.63 44 70 44 H 26 C 22.69 44 20 41.31 20 38 V 36 C 20 32.69 22.69 30 26 30 H 54" 
+        fill="none" stroke="currentColor" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                            </div>
+                            <span class="swatch-label">Cream-on-Dark (#F7F3EA on #29483A)</span>
+                        </div>
+                    </div>
+
+                    <!-- Lockup Previews -->
+                    <div class="lockup-preview-card">
+                        <div>
+                            <span class="ladder-label" style="display:block; margin-bottom: 12px;">PRIMARY WORDMARK LOCKUP</span>
+                            <div class="brand-lockup-row">
+                                <div class="lockup-icon">
+                                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Upper Path: sweeps from top-right, down left flank, and hooks across center -->
+  <path d="M 76 22 H 34 C 25.16 22 18 29.16 18 38 V 44 C 18 50.63 23.37 56 30 56 H 74 C 77.31 56 80 58.69 80 62 V 64 C 80 67.31 77.31 70 74 70 H 46" 
+        fill="none" stroke="currentColor" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Lower Path (Rotated 180deg): sweeps from bottom-left, up right flank, and hooks across center -->
+  <path d="M 24 78 H 66 C 74.84 78 82 70.84 82 62 V 56 C 82 49.37 76.63 44 70 44 H 26 C 22.69 44 20 41.31 20 38 V 36 C 20 32.69 22.69 30 26 30 H 54" 
+        fill="none" stroke="currentColor" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                                </div>
+                                <div>
+                                    <div class="lockup-wordmark">CodeSage</div>
+                                    <div class="wordmark-subtext">AI Programming Mentor</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <span class="ladder-label" style="display:block; margin-bottom: 10px;">INVERTED NAV / EMBLEM LOCKUP</span>
+                            <div class="brand-lockup-dark">
+                                <div class="lockup-icon">
+                                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Upper Path: sweeps from top-right, down left flank, and hooks across center -->
+  <path d="M 76 22 H 34 C 25.16 22 18 29.16 18 38 V 44 C 18 50.63 23.37 56 30 56 H 74 C 77.31 56 80 58.69 80 62 V 64 C 80 67.31 77.31 70 74 70 H 46" 
+        fill="none" stroke="currentColor" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Lower Path (Rotated 180deg): sweeps from bottom-left, up right flank, and hooks across center -->
+  <path d="M 24 78 H 66 C 74.84 78 82 70.84 82 62 V 56 C 82 49.37 76.63 44 70 44 H 26 C 22.69 44 20 41.31 20 38 V 36 C 20 32.69 22.69 30 26 30 H 54" 
+        fill="none" stroke="currentColor" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                                </div>
+                                <div class="lockup-wordmark">CodeSage</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Size Ladder Test -->
+                <div class="size-ladder-strip">
+                    <div class="ladder-title">
+                        <span>Small-Size Legibility Verification Ladder</span>
+                        <span>128px • 64px • 48px • 32px • 24px • 16px</span>
+                    </div>
+
+                    <div class="ladder-row">
+                        <div class="ladder-item">
+                            <div class="ladder-glyph glyph-128"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Upper Path: sweeps from top-right, down left flank, and hooks across center -->
+  <path d="M 76 22 H 34 C 25.16 22 18 29.16 18 38 V 44 C 18 50.63 23.37 56 30 56 H 74 C 77.31 56 80 58.69 80 62 V 64 C 80 67.31 77.31 70 74 70 H 46" 
+        fill="none" stroke="currentColor" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Lower Path (Rotated 180deg): sweeps from bottom-left, up right flank, and hooks across center -->
+  <path d="M 24 78 H 66 C 74.84 78 82 70.84 82 62 V 56 C 82 49.37 76.63 44 70 44 H 26 C 22.69 44 20 41.31 20 38 V 36 C 20 32.69 22.69 30 26 30 H 54" 
+        fill="none" stroke="currentColor" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></div>
+                            <span class="ladder-label">128px</span>
+                        </div>
+                        <div class="ladder-item">
+                            <div class="ladder-glyph glyph-64"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Upper Path: sweeps from top-right, down left flank, and hooks across center -->
+  <path d="M 76 22 H 34 C 25.16 22 18 29.16 18 38 V 44 C 18 50.63 23.37 56 30 56 H 74 C 77.31 56 80 58.69 80 62 V 64 C 80 67.31 77.31 70 74 70 H 46" 
+        fill="none" stroke="currentColor" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Lower Path (Rotated 180deg): sweeps from bottom-left, up right flank, and hooks across center -->
+  <path d="M 24 78 H 66 C 74.84 78 82 70.84 82 62 V 56 C 82 49.37 76.63 44 70 44 H 26 C 22.69 44 20 41.31 20 38 V 36 C 20 32.69 22.69 30 26 30 H 54" 
+        fill="none" stroke="currentColor" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></div>
+                            <span class="ladder-label">64px</span>
+                        </div>
+                        <div class="ladder-item">
+                            <div class="ladder-glyph glyph-48"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Upper Path: sweeps from top-right, down left flank, and hooks across center -->
+  <path d="M 76 22 H 34 C 25.16 22 18 29.16 18 38 V 44 C 18 50.63 23.37 56 30 56 H 74 C 77.31 56 80 58.69 80 62 V 64 C 80 67.31 77.31 70 74 70 H 46" 
+        fill="none" stroke="currentColor" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Lower Path (Rotated 180deg): sweeps from bottom-left, up right flank, and hooks across center -->
+  <path d="M 24 78 H 66 C 74.84 78 82 70.84 82 62 V 56 C 82 49.37 76.63 44 70 44 H 26 C 22.69 44 20 41.31 20 38 V 36 C 20 32.69 22.69 30 26 30 H 54" 
+        fill="none" stroke="currentColor" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></div>
+                            <span class="ladder-label">48px</span>
+                        </div>
+                        <div class="ladder-item">
+                            <div class="ladder-glyph glyph-32"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Upper Path: sweeps from top-right, down left flank, and hooks across center -->
+  <path d="M 76 22 H 34 C 25.16 22 18 29.16 18 38 V 44 C 18 50.63 23.37 56 30 56 H 74 C 77.31 56 80 58.69 80 62 V 64 C 80 67.31 77.31 70 74 70 H 46" 
+        fill="none" stroke="currentColor" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Lower Path (Rotated 180deg): sweeps from bottom-left, up right flank, and hooks across center -->
+  <path d="M 24 78 H 66 C 74.84 78 82 70.84 82 62 V 56 C 82 49.37 76.63 44 70 44 H 26 C 22.69 44 20 41.31 20 38 V 36 C 20 32.69 22.69 30 26 30 H 54" 
+        fill="none" stroke="currentColor" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></div>
+                            <span class="ladder-label">32px</span>
+                        </div>
+                        <div class="ladder-item">
+                            <div class="ladder-glyph glyph-24"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Upper Path: sweeps from top-right, down left flank, and hooks across center -->
+  <path d="M 76 22 H 34 C 25.16 22 18 29.16 18 38 V 44 C 18 50.63 23.37 56 30 56 H 74 C 77.31 56 80 58.69 80 62 V 64 C 80 67.31 77.31 70 74 70 H 46" 
+        fill="none" stroke="currentColor" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Lower Path (Rotated 180deg): sweeps from bottom-left, up right flank, and hooks across center -->
+  <path d="M 24 78 H 66 C 74.84 78 82 70.84 82 62 V 56 C 82 49.37 76.63 44 70 44 H 26 C 22.69 44 20 41.31 20 38 V 36 C 20 32.69 22.69 30 26 30 H 54" 
+        fill="none" stroke="currentColor" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></div>
+                            <span class="ladder-label">24px</span>
+                        </div>
+                        <div class="ladder-item">
+                            <div class="ladder-glyph glyph-16"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Upper Path: sweeps from top-right, down left flank, and hooks across center -->
+  <path d="M 76 22 H 34 C 25.16 22 18 29.16 18 38 V 44 C 18 50.63 23.37 56 30 56 H 74 C 77.31 56 80 58.69 80 62 V 64 C 80 67.31 77.31 70 74 70 H 46" 
+        fill="none" stroke="currentColor" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Lower Path (Rotated 180deg): sweeps from bottom-left, up right flank, and hooks across center -->
+  <path d="M 24 78 H 66 C 74.84 78 82 70.84 82 62 V 56 C 82 49.37 76.63 44 70 44 H 26 C 22.69 44 20 41.31 20 38 V 36 C 20 32.69 22.69 30 26 30 H 54" 
+        fill="none" stroke="currentColor" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></div>
+                            <span class="ladder-label">16px</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Architectural Notes -->
+                <div class="var-notes-grid">
+                    <div class="note-block">
+                        <h5>Geometric Architecture</h5>
+                        <p>Two balanced, uniform 12px ribbon channels with concentric 180° rotational symmetry. The paths overlap at the center without touching.</p>
+                    </div>
+                    <div class="note-block">
+                        <h5>Subtle Programming Homage</h5>
+                        <p>Evokes paired programming, mentor-student dialogue, and algorithmic recursion. Two independent logic threads converging in synthesis.</p>
+                    </div>
+                </div>
+            </article>
+    
+            <!-- Variation 3: The Stepped Tablet -->
+            <article class="variation-card" id="opt-3">
+                <div class="var-header">
+                    <div>
+                        <span class="var-badge">Variation B</span>
+                        <h3 class="var-name">Variation 3: The Stepped Tablet</h3>
+                        <div class="var-subtitle">Modular Negative Conduit (Variation B)</div>
+                    </div>
+                    <div class="var-rating">
+                        Small-scale legibility rating:<br>
+                        <strong>Superior (10/10) — Behaves as a solid icon glyph; the negative slots punch through sharply against any background.</strong>
+                    </div>
+                </div>
+
+                <div class="var-display-grid">
+                    <!-- Swatches: Dark on Cream & Cream on Dark -->
+                    <div class="swatches-row">
+                        <!-- Dark on Cream -->
+                        <div class="swatch-box swatch-cream">
+                            <div class="swatch-icon-wrap">
+                                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="
+    M 26 14 H 74 C 80.63 14 86 19.37 86 26 V 74 C 86 80.63 80.63 86 74 86 H 26 C 19.37 86 14 80.63 14 74 V 26 C 14 19.37 19.37 14 26 14 Z
+    M 14 38 H 64 C 67.31 38 70 40.69 70 44 C 70 47.31 67.31 50 64 50 H 14 V 38 Z
+    M 86 50 H 36 C 32.69 50 30 52.69 30 56 C 30 59.31 32.69 62 36 62 H 86 V 50 Z
+  " fill="currentColor"/>
+</svg>
+                            </div>
+                            <span class="swatch-label">Dark-on-Cream (#29483A on #F7F3EA)</span>
+                        </div>
+
+                        <!-- Cream on Dark -->
+                        <div class="swatch-box swatch-dark">
+                            <div class="swatch-icon-wrap">
+                                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="
+    M 26 14 H 74 C 80.63 14 86 19.37 86 26 V 74 C 86 80.63 80.63 86 74 86 H 26 C 19.37 86 14 80.63 14 74 V 26 C 14 19.37 19.37 14 26 14 Z
+    M 14 38 H 64 C 67.31 38 70 40.69 70 44 C 70 47.31 67.31 50 64 50 H 14 V 38 Z
+    M 86 50 H 36 C 32.69 50 30 52.69 30 56 C 30 59.31 32.69 62 36 62 H 86 V 50 Z
+  " fill="currentColor"/>
+</svg>
+                            </div>
+                            <span class="swatch-label">Cream-on-Dark (#F7F3EA on #29483A)</span>
+                        </div>
+                    </div>
+
+                    <!-- Lockup Previews -->
+                    <div class="lockup-preview-card">
+                        <div>
+                            <span class="ladder-label" style="display:block; margin-bottom: 12px;">PRIMARY WORDMARK LOCKUP</span>
+                            <div class="brand-lockup-row">
+                                <div class="lockup-icon">
+                                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="
+    M 26 14 H 74 C 80.63 14 86 19.37 86 26 V 74 C 86 80.63 80.63 86 74 86 H 26 C 19.37 86 14 80.63 14 74 V 26 C 14 19.37 19.37 14 26 14 Z
+    M 14 38 H 64 C 67.31 38 70 40.69 70 44 C 70 47.31 67.31 50 64 50 H 14 V 38 Z
+    M 86 50 H 36 C 32.69 50 30 52.69 30 56 C 30 59.31 32.69 62 36 62 H 86 V 50 Z
+  " fill="currentColor"/>
+</svg>
+                                </div>
+                                <div>
+                                    <div class="lockup-wordmark">CodeSage</div>
+                                    <div class="wordmark-subtext">AI Programming Mentor</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <span class="ladder-label" style="display:block; margin-bottom: 10px;">INVERTED NAV / EMBLEM LOCKUP</span>
+                            <div class="brand-lockup-dark">
+                                <div class="lockup-icon">
+                                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="
+    M 26 14 H 74 C 80.63 14 86 19.37 86 26 V 74 C 86 80.63 80.63 86 74 86 H 26 C 19.37 86 14 80.63 14 74 V 26 C 14 19.37 19.37 14 26 14 Z
+    M 14 38 H 64 C 67.31 38 70 40.69 70 44 C 70 47.31 67.31 50 64 50 H 14 V 38 Z
+    M 86 50 H 36 C 32.69 50 30 52.69 30 56 C 30 59.31 32.69 62 36 62 H 86 V 50 Z
+  " fill="currentColor"/>
+</svg>
+                                </div>
+                                <div class="lockup-wordmark">CodeSage</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Size Ladder Test -->
+                <div class="size-ladder-strip">
+                    <div class="ladder-title">
+                        <span>Small-Size Legibility Verification Ladder</span>
+                        <span>128px • 64px • 48px • 32px • 24px • 16px</span>
+                    </div>
+
+                    <div class="ladder-row">
+                        <div class="ladder-item">
+                            <div class="ladder-glyph glyph-128"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="
+    M 26 14 H 74 C 80.63 14 86 19.37 86 26 V 74 C 86 80.63 80.63 86 74 86 H 26 C 19.37 86 14 80.63 14 74 V 26 C 14 19.37 19.37 14 26 14 Z
+    M 14 38 H 64 C 67.31 38 70 40.69 70 44 C 70 47.31 67.31 50 64 50 H 14 V 38 Z
+    M 86 50 H 36 C 32.69 50 30 52.69 30 56 C 30 59.31 32.69 62 36 62 H 86 V 50 Z
+  " fill="currentColor"/>
+</svg></div>
+                            <span class="ladder-label">128px</span>
+                        </div>
+                        <div class="ladder-item">
+                            <div class="ladder-glyph glyph-64"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="
+    M 26 14 H 74 C 80.63 14 86 19.37 86 26 V 74 C 86 80.63 80.63 86 74 86 H 26 C 19.37 86 14 80.63 14 74 V 26 C 14 19.37 19.37 14 26 14 Z
+    M 14 38 H 64 C 67.31 38 70 40.69 70 44 C 70 47.31 67.31 50 64 50 H 14 V 38 Z
+    M 86 50 H 36 C 32.69 50 30 52.69 30 56 C 30 59.31 32.69 62 36 62 H 86 V 50 Z
+  " fill="currentColor"/>
+</svg></div>
+                            <span class="ladder-label">64px</span>
+                        </div>
+                        <div class="ladder-item">
+                            <div class="ladder-glyph glyph-48"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="
+    M 26 14 H 74 C 80.63 14 86 19.37 86 26 V 74 C 86 80.63 80.63 86 74 86 H 26 C 19.37 86 14 80.63 14 74 V 26 C 14 19.37 19.37 14 26 14 Z
+    M 14 38 H 64 C 67.31 38 70 40.69 70 44 C 70 47.31 67.31 50 64 50 H 14 V 38 Z
+    M 86 50 H 36 C 32.69 50 30 52.69 30 56 C 30 59.31 32.69 62 36 62 H 86 V 50 Z
+  " fill="currentColor"/>
+</svg></div>
+                            <span class="ladder-label">48px</span>
+                        </div>
+                        <div class="ladder-item">
+                            <div class="ladder-glyph glyph-32"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="
+    M 26 14 H 74 C 80.63 14 86 19.37 86 26 V 74 C 86 80.63 80.63 86 74 86 H 26 C 19.37 86 14 80.63 14 74 V 26 C 14 19.37 19.37 14 26 14 Z
+    M 14 38 H 64 C 67.31 38 70 40.69 70 44 C 70 47.31 67.31 50 64 50 H 14 V 38 Z
+    M 86 50 H 36 C 32.69 50 30 52.69 30 56 C 30 59.31 32.69 62 36 62 H 86 V 50 Z
+  " fill="currentColor"/>
+</svg></div>
+                            <span class="ladder-label">32px</span>
+                        </div>
+                        <div class="ladder-item">
+                            <div class="ladder-glyph glyph-24"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="
+    M 26 14 H 74 C 80.63 14 86 19.37 86 26 V 74 C 86 80.63 80.63 86 74 86 H 26 C 19.37 86 14 80.63 14 74 V 26 C 14 19.37 19.37 14 26 14 Z
+    M 14 38 H 64 C 67.31 38 70 40.69 70 44 C 70 47.31 67.31 50 64 50 H 14 V 38 Z
+    M 86 50 H 36 C 32.69 50 30 52.69 30 56 C 30 59.31 32.69 62 36 62 H 86 V 50 Z
+  " fill="currentColor"/>
+</svg></div>
+                            <span class="ladder-label">24px</span>
+                        </div>
+                        <div class="ladder-item">
+                            <div class="ladder-glyph glyph-16"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="
+    M 26 14 H 74 C 80.63 14 86 19.37 86 26 V 74 C 86 80.63 80.63 86 74 86 H 26 C 19.37 86 14 80.63 14 74 V 26 C 14 19.37 19.37 14 26 14 Z
+    M 14 38 H 64 C 67.31 38 70 40.69 70 44 C 70 47.31 67.31 50 64 50 H 14 V 38 Z
+    M 86 50 H 36 C 32.69 50 30 52.69 30 56 C 30 59.31 32.69 62 36 62 H 86 V 50 Z
+  " fill="currentColor"/>
+</svg></div>
+                            <span class="ladder-label">16px</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Architectural Notes -->
+                <div class="var-notes-grid">
+                    <div class="note-block">
+                        <h5>Geometric Architecture</h5>
+                        <p>A monolithic rounded squarish frame with two opposing horizontal incisions that guide the eye through an industrial S-curve.</p>
+                    </div>
+                    <div class="note-block">
+                        <h5>Subtle Programming Homage</h5>
+                        <p>Directly references structured modular code blocks and progressive stepping. Unshakeable stability, engineering rigor, and modern restraint.</p>
+                    </div>
+                </div>
+            </article>
+    
+            <!-- Variation 4: Dual Opposing Quadrants -->
+            <article class="variation-card" id="opt-4">
+                <div class="var-header">
+                    <div>
+                        <span class="var-badge">Variation C</span>
+                        <h3 class="var-name">Variation 4: Dual Opposing Quadrants</h3>
+                        <div class="var-subtitle">45° Negative Slip-Plane (Variation C)</div>
+                    </div>
+                    <div class="var-rating">
+                        Small-scale legibility rating:<br>
+                        <strong>Very High (9/10) — Broad visual mass gives instant presence on dark or cream surfaces.</strong>
+                    </div>
+                </div>
+
+                <div class="var-display-grid">
+                    <!-- Swatches: Dark on Cream & Cream on Dark -->
+                    <div class="swatches-row">
+                        <!-- Dark on Cream -->
+                        <div class="swatch-box swatch-cream">
+                            <div class="swatch-icon-wrap">
+                                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Top-Left Form: flat top, rounded outer corner, 45-deg inner chamfer -->
+  <path d="M 24 16 H 74 C 77.31 16 80 18.69 80 22 V 32 C 80 34.21 78.21 36 76 36 H 54 L 32 58 H 22 C 19.79 58 18 56.21 18 54 V 22 C 18 18.69 20.69 16 24 16 Z" fill="currentColor"/>
+  <!-- Bottom-Right Form (180deg Rotational Symmetry) -->
+  <path d="M 76 84 H 26 C 22.69 84 20 81.31 20 78 V 68 C 20 65.79 21.79 64 24 64 H 46 L 68 42 H 78 C 80.21 42 82 43.79 82 46 V 78 C 82 81.31 79.31 84 76 84 Z" fill="currentColor"/>
+</svg>
+                            </div>
+                            <span class="swatch-label">Dark-on-Cream (#29483A on #F7F3EA)</span>
+                        </div>
+
+                        <!-- Cream on Dark -->
+                        <div class="swatch-box swatch-dark">
+                            <div class="swatch-icon-wrap">
+                                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Top-Left Form: flat top, rounded outer corner, 45-deg inner chamfer -->
+  <path d="M 24 16 H 74 C 77.31 16 80 18.69 80 22 V 32 C 80 34.21 78.21 36 76 36 H 54 L 32 58 H 22 C 19.79 58 18 56.21 18 54 V 22 C 18 18.69 20.69 16 24 16 Z" fill="currentColor"/>
+  <!-- Bottom-Right Form (180deg Rotational Symmetry) -->
+  <path d="M 76 84 H 26 C 22.69 84 20 81.31 20 78 V 68 C 20 65.79 21.79 64 24 64 H 46 L 68 42 H 78 C 80.21 42 82 43.79 82 46 V 78 C 82 81.31 79.31 84 76 84 Z" fill="currentColor"/>
+</svg>
+                            </div>
+                            <span class="swatch-label">Cream-on-Dark (#F7F3EA on #29483A)</span>
+                        </div>
+                    </div>
+
+                    <!-- Lockup Previews -->
+                    <div class="lockup-preview-card">
+                        <div>
+                            <span class="ladder-label" style="display:block; margin-bottom: 12px;">PRIMARY WORDMARK LOCKUP</span>
+                            <div class="brand-lockup-row">
+                                <div class="lockup-icon">
+                                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Top-Left Form: flat top, rounded outer corner, 45-deg inner chamfer -->
+  <path d="M 24 16 H 74 C 77.31 16 80 18.69 80 22 V 32 C 80 34.21 78.21 36 76 36 H 54 L 32 58 H 22 C 19.79 58 18 56.21 18 54 V 22 C 18 18.69 20.69 16 24 16 Z" fill="currentColor"/>
+  <!-- Bottom-Right Form (180deg Rotational Symmetry) -->
+  <path d="M 76 84 H 26 C 22.69 84 20 81.31 20 78 V 68 C 20 65.79 21.79 64 24 64 H 46 L 68 42 H 78 C 80.21 42 82 43.79 82 46 V 78 C 82 81.31 79.31 84 76 84 Z" fill="currentColor"/>
+</svg>
+                                </div>
+                                <div>
+                                    <div class="lockup-wordmark">CodeSage</div>
+                                    <div class="wordmark-subtext">AI Programming Mentor</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <span class="ladder-label" style="display:block; margin-bottom: 10px;">INVERTED NAV / EMBLEM LOCKUP</span>
+                            <div class="brand-lockup-dark">
+                                <div class="lockup-icon">
+                                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Top-Left Form: flat top, rounded outer corner, 45-deg inner chamfer -->
+  <path d="M 24 16 H 74 C 77.31 16 80 18.69 80 22 V 32 C 80 34.21 78.21 36 76 36 H 54 L 32 58 H 22 C 19.79 58 18 56.21 18 54 V 22 C 18 18.69 20.69 16 24 16 Z" fill="currentColor"/>
+  <!-- Bottom-Right Form (180deg Rotational Symmetry) -->
+  <path d="M 76 84 H 26 C 22.69 84 20 81.31 20 78 V 68 C 20 65.79 21.79 64 24 64 H 46 L 68 42 H 78 C 80.21 42 82 43.79 82 46 V 78 C 82 81.31 79.31 84 76 84 Z" fill="currentColor"/>
+</svg>
+                                </div>
+                                <div class="lockup-wordmark">CodeSage</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Size Ladder Test -->
+                <div class="size-ladder-strip">
+                    <div class="ladder-title">
+                        <span>Small-Size Legibility Verification Ladder</span>
+                        <span>128px • 64px • 48px • 32px • 24px • 16px</span>
+                    </div>
+
+                    <div class="ladder-row">
+                        <div class="ladder-item">
+                            <div class="ladder-glyph glyph-128"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Top-Left Form: flat top, rounded outer corner, 45-deg inner chamfer -->
+  <path d="M 24 16 H 74 C 77.31 16 80 18.69 80 22 V 32 C 80 34.21 78.21 36 76 36 H 54 L 32 58 H 22 C 19.79 58 18 56.21 18 54 V 22 C 18 18.69 20.69 16 24 16 Z" fill="currentColor"/>
+  <!-- Bottom-Right Form (180deg Rotational Symmetry) -->
+  <path d="M 76 84 H 26 C 22.69 84 20 81.31 20 78 V 68 C 20 65.79 21.79 64 24 64 H 46 L 68 42 H 78 C 80.21 42 82 43.79 82 46 V 78 C 82 81.31 79.31 84 76 84 Z" fill="currentColor"/>
+</svg></div>
+                            <span class="ladder-label">128px</span>
+                        </div>
+                        <div class="ladder-item">
+                            <div class="ladder-glyph glyph-64"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Top-Left Form: flat top, rounded outer corner, 45-deg inner chamfer -->
+  <path d="M 24 16 H 74 C 77.31 16 80 18.69 80 22 V 32 C 80 34.21 78.21 36 76 36 H 54 L 32 58 H 22 C 19.79 58 18 56.21 18 54 V 22 C 18 18.69 20.69 16 24 16 Z" fill="currentColor"/>
+  <!-- Bottom-Right Form (180deg Rotational Symmetry) -->
+  <path d="M 76 84 H 26 C 22.69 84 20 81.31 20 78 V 68 C 20 65.79 21.79 64 24 64 H 46 L 68 42 H 78 C 80.21 42 82 43.79 82 46 V 78 C 82 81.31 79.31 84 76 84 Z" fill="currentColor"/>
+</svg></div>
+                            <span class="ladder-label">64px</span>
+                        </div>
+                        <div class="ladder-item">
+                            <div class="ladder-glyph glyph-48"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Top-Left Form: flat top, rounded outer corner, 45-deg inner chamfer -->
+  <path d="M 24 16 H 74 C 77.31 16 80 18.69 80 22 V 32 C 80 34.21 78.21 36 76 36 H 54 L 32 58 H 22 C 19.79 58 18 56.21 18 54 V 22 C 18 18.69 20.69 16 24 16 Z" fill="currentColor"/>
+  <!-- Bottom-Right Form (180deg Rotational Symmetry) -->
+  <path d="M 76 84 H 26 C 22.69 84 20 81.31 20 78 V 68 C 20 65.79 21.79 64 24 64 H 46 L 68 42 H 78 C 80.21 42 82 43.79 82 46 V 78 C 82 81.31 79.31 84 76 84 Z" fill="currentColor"/>
+</svg></div>
+                            <span class="ladder-label">48px</span>
+                        </div>
+                        <div class="ladder-item">
+                            <div class="ladder-glyph glyph-32"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Top-Left Form: flat top, rounded outer corner, 45-deg inner chamfer -->
+  <path d="M 24 16 H 74 C 77.31 16 80 18.69 80 22 V 32 C 80 34.21 78.21 36 76 36 H 54 L 32 58 H 22 C 19.79 58 18 56.21 18 54 V 22 C 18 18.69 20.69 16 24 16 Z" fill="currentColor"/>
+  <!-- Bottom-Right Form (180deg Rotational Symmetry) -->
+  <path d="M 76 84 H 26 C 22.69 84 20 81.31 20 78 V 68 C 20 65.79 21.79 64 24 64 H 46 L 68 42 H 78 C 80.21 42 82 43.79 82 46 V 78 C 82 81.31 79.31 84 76 84 Z" fill="currentColor"/>
+</svg></div>
+                            <span class="ladder-label">32px</span>
+                        </div>
+                        <div class="ladder-item">
+                            <div class="ladder-glyph glyph-24"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Top-Left Form: flat top, rounded outer corner, 45-deg inner chamfer -->
+  <path d="M 24 16 H 74 C 77.31 16 80 18.69 80 22 V 32 C 80 34.21 78.21 36 76 36 H 54 L 32 58 H 22 C 19.79 58 18 56.21 18 54 V 22 C 18 18.69 20.69 16 24 16 Z" fill="currentColor"/>
+  <!-- Bottom-Right Form (180deg Rotational Symmetry) -->
+  <path d="M 76 84 H 26 C 22.69 84 20 81.31 20 78 V 68 C 20 65.79 21.79 64 24 64 H 46 L 68 42 H 78 C 80.21 42 82 43.79 82 46 V 78 C 82 81.31 79.31 84 76 84 Z" fill="currentColor"/>
+</svg></div>
+                            <span class="ladder-label">24px</span>
+                        </div>
+                        <div class="ladder-item">
+                            <div class="ladder-glyph glyph-16"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Top-Left Form: flat top, rounded outer corner, 45-deg inner chamfer -->
+  <path d="M 24 16 H 74 C 77.31 16 80 18.69 80 22 V 32 C 80 34.21 78.21 36 76 36 H 54 L 32 58 H 22 C 19.79 58 18 56.21 18 54 V 22 C 18 18.69 20.69 16 24 16 Z" fill="currentColor"/>
+  <!-- Bottom-Right Form (180deg Rotational Symmetry) -->
+  <path d="M 76 84 H 26 C 22.69 84 20 81.31 20 78 V 68 C 20 65.79 21.79 64 24 64 H 46 L 68 42 H 78 C 80.21 42 82 43.79 82 46 V 78 C 82 81.31 79.31 84 76 84 Z" fill="currentColor"/>
+</svg></div>
+                            <span class="ladder-label">16px</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Architectural Notes -->
+                <div class="var-notes-grid">
+                    <div class="note-block">
+                        <h5>Geometric Architecture</h5>
+                        <p>Two opposing geometric quadrants with 45-degree internal chamfers forming an angled negative channel through the core.</p>
+                    </div>
+                    <div class="note-block">
+                        <h5>Subtle Programming Homage</h5>
+                        <p>Represents problem decompensation: breaking complex challenges into complementary parts and discovering the elegant bridge between them.</p>
+                    </div>
+                </div>
+            </article>
+    
+            <!-- Variation 5: The Execution Conduit -->
+            <article class="variation-card" id="opt-5">
+                <div class="var-header">
+                    <div>
+                        <span class="var-badge">Variation D</span>
+                        <h3 class="var-name">Variation 5: The Execution Conduit</h3>
+                        <div class="var-subtitle">Abstract Code Execution Path (Variation D)</div>
+                    </div>
+                    <div class="var-rating">
+                        Small-scale legibility rating:<br>
+                        <strong>High (8.5/10) — Precision geometry looks exquisite at medium and large scales; clear silhouette at 24px.</strong>
+                    </div>
+                </div>
+
+                <div class="var-display-grid">
+                    <!-- Swatches: Dark on Cream & Cream on Dark -->
+                    <div class="swatches-row">
+                        <!-- Dark on Cream -->
+                        <div class="swatch-box swatch-cream">
+                            <div class="swatch-icon-wrap">
+                                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Upper Logic Bracket -->
+  <path d="M 22 20 H 74 C 77.31 20 80 22.69 80 26 V 46 C 80 48.21 78.21 50 76 50 H 52 C 48.69 50 46 52.69 46 56 V 60 H 34 C 31.79 60 30 58.21 30 56 V 34 C 30 31.79 31.79 30 34 30 H 66 V 26 C 66 23.79 64.21 22 62 22 H 22 Z" fill="currentColor"/>
+  <!-- Lower Logic Bracket (180deg Mirrored Rotation) -->
+  <path d="M 78 80 H 26 C 22.69 80 20 77.31 20 74 V 54 C 20 51.79 21.79 50 24 50 H 48 C 51.31 50 54 47.31 54 44 V 40 H 66 C 68.21 40 70 41.79 70 44 V 66 C 70 68.21 68.21 70 66 70 H 34 V 74 C 34 76.21 35.79 78 38 78 H 78 Z" fill="currentColor"/>
+</svg>
+                            </div>
+                            <span class="swatch-label">Dark-on-Cream (#29483A on #F7F3EA)</span>
+                        </div>
+
+                        <!-- Cream on Dark -->
+                        <div class="swatch-box swatch-dark">
+                            <div class="swatch-icon-wrap">
+                                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Upper Logic Bracket -->
+  <path d="M 22 20 H 74 C 77.31 20 80 22.69 80 26 V 46 C 80 48.21 78.21 50 76 50 H 52 C 48.69 50 46 52.69 46 56 V 60 H 34 C 31.79 60 30 58.21 30 56 V 34 C 30 31.79 31.79 30 34 30 H 66 V 26 C 66 23.79 64.21 22 62 22 H 22 Z" fill="currentColor"/>
+  <!-- Lower Logic Bracket (180deg Mirrored Rotation) -->
+  <path d="M 78 80 H 26 C 22.69 80 20 77.31 20 74 V 54 C 20 51.79 21.79 50 24 50 H 48 C 51.31 50 54 47.31 54 44 V 40 H 66 C 68.21 40 70 41.79 70 44 V 66 C 70 68.21 68.21 70 66 70 H 34 V 74 C 34 76.21 35.79 78 38 78 H 78 Z" fill="currentColor"/>
+</svg>
+                            </div>
+                            <span class="swatch-label">Cream-on-Dark (#F7F3EA on #29483A)</span>
+                        </div>
+                    </div>
+
+                    <!-- Lockup Previews -->
+                    <div class="lockup-preview-card">
+                        <div>
+                            <span class="ladder-label" style="display:block; margin-bottom: 12px;">PRIMARY WORDMARK LOCKUP</span>
+                            <div class="brand-lockup-row">
+                                <div class="lockup-icon">
+                                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Upper Logic Bracket -->
+  <path d="M 22 20 H 74 C 77.31 20 80 22.69 80 26 V 46 C 80 48.21 78.21 50 76 50 H 52 C 48.69 50 46 52.69 46 56 V 60 H 34 C 31.79 60 30 58.21 30 56 V 34 C 30 31.79 31.79 30 34 30 H 66 V 26 C 66 23.79 64.21 22 62 22 H 22 Z" fill="currentColor"/>
+  <!-- Lower Logic Bracket (180deg Mirrored Rotation) -->
+  <path d="M 78 80 H 26 C 22.69 80 20 77.31 20 74 V 54 C 20 51.79 21.79 50 24 50 H 48 C 51.31 50 54 47.31 54 44 V 40 H 66 C 68.21 40 70 41.79 70 44 V 66 C 70 68.21 68.21 70 66 70 H 34 V 74 C 34 76.21 35.79 78 38 78 H 78 Z" fill="currentColor"/>
+</svg>
+                                </div>
+                                <div>
+                                    <div class="lockup-wordmark">CodeSage</div>
+                                    <div class="wordmark-subtext">AI Programming Mentor</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <span class="ladder-label" style="display:block; margin-bottom: 10px;">INVERTED NAV / EMBLEM LOCKUP</span>
+                            <div class="brand-lockup-dark">
+                                <div class="lockup-icon">
+                                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Upper Logic Bracket -->
+  <path d="M 22 20 H 74 C 77.31 20 80 22.69 80 26 V 46 C 80 48.21 78.21 50 76 50 H 52 C 48.69 50 46 52.69 46 56 V 60 H 34 C 31.79 60 30 58.21 30 56 V 34 C 30 31.79 31.79 30 34 30 H 66 V 26 C 66 23.79 64.21 22 62 22 H 22 Z" fill="currentColor"/>
+  <!-- Lower Logic Bracket (180deg Mirrored Rotation) -->
+  <path d="M 78 80 H 26 C 22.69 80 20 77.31 20 74 V 54 C 20 51.79 21.79 50 24 50 H 48 C 51.31 50 54 47.31 54 44 V 40 H 66 C 68.21 40 70 41.79 70 44 V 66 C 70 68.21 68.21 70 66 70 H 34 V 74 C 34 76.21 35.79 78 38 78 H 78 Z" fill="currentColor"/>
+</svg>
+                                </div>
+                                <div class="lockup-wordmark">CodeSage</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Size Ladder Test -->
+                <div class="size-ladder-strip">
+                    <div class="ladder-title">
+                        <span>Small-Size Legibility Verification Ladder</span>
+                        <span>128px • 64px • 48px • 32px • 24px • 16px</span>
+                    </div>
+
+                    <div class="ladder-row">
+                        <div class="ladder-item">
+                            <div class="ladder-glyph glyph-128"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Upper Logic Bracket -->
+  <path d="M 22 20 H 74 C 77.31 20 80 22.69 80 26 V 46 C 80 48.21 78.21 50 76 50 H 52 C 48.69 50 46 52.69 46 56 V 60 H 34 C 31.79 60 30 58.21 30 56 V 34 C 30 31.79 31.79 30 34 30 H 66 V 26 C 66 23.79 64.21 22 62 22 H 22 Z" fill="currentColor"/>
+  <!-- Lower Logic Bracket (180deg Mirrored Rotation) -->
+  <path d="M 78 80 H 26 C 22.69 80 20 77.31 20 74 V 54 C 20 51.79 21.79 50 24 50 H 48 C 51.31 50 54 47.31 54 44 V 40 H 66 C 68.21 40 70 41.79 70 44 V 66 C 70 68.21 68.21 70 66 70 H 34 V 74 C 34 76.21 35.79 78 38 78 H 78 Z" fill="currentColor"/>
+</svg></div>
+                            <span class="ladder-label">128px</span>
+                        </div>
+                        <div class="ladder-item">
+                            <div class="ladder-glyph glyph-64"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Upper Logic Bracket -->
+  <path d="M 22 20 H 74 C 77.31 20 80 22.69 80 26 V 46 C 80 48.21 78.21 50 76 50 H 52 C 48.69 50 46 52.69 46 56 V 60 H 34 C 31.79 60 30 58.21 30 56 V 34 C 30 31.79 31.79 30 34 30 H 66 V 26 C 66 23.79 64.21 22 62 22 H 22 Z" fill="currentColor"/>
+  <!-- Lower Logic Bracket (180deg Mirrored Rotation) -->
+  <path d="M 78 80 H 26 C 22.69 80 20 77.31 20 74 V 54 C 20 51.79 21.79 50 24 50 H 48 C 51.31 50 54 47.31 54 44 V 40 H 66 C 68.21 40 70 41.79 70 44 V 66 C 70 68.21 68.21 70 66 70 H 34 V 74 C 34 76.21 35.79 78 38 78 H 78 Z" fill="currentColor"/>
+</svg></div>
+                            <span class="ladder-label">64px</span>
+                        </div>
+                        <div class="ladder-item">
+                            <div class="ladder-glyph glyph-48"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Upper Logic Bracket -->
+  <path d="M 22 20 H 74 C 77.31 20 80 22.69 80 26 V 46 C 80 48.21 78.21 50 76 50 H 52 C 48.69 50 46 52.69 46 56 V 60 H 34 C 31.79 60 30 58.21 30 56 V 34 C 30 31.79 31.79 30 34 30 H 66 V 26 C 66 23.79 64.21 22 62 22 H 22 Z" fill="currentColor"/>
+  <!-- Lower Logic Bracket (180deg Mirrored Rotation) -->
+  <path d="M 78 80 H 26 C 22.69 80 20 77.31 20 74 V 54 C 20 51.79 21.79 50 24 50 H 48 C 51.31 50 54 47.31 54 44 V 40 H 66 C 68.21 40 70 41.79 70 44 V 66 C 70 68.21 68.21 70 66 70 H 34 V 74 C 34 76.21 35.79 78 38 78 H 78 Z" fill="currentColor"/>
+</svg></div>
+                            <span class="ladder-label">48px</span>
+                        </div>
+                        <div class="ladder-item">
+                            <div class="ladder-glyph glyph-32"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Upper Logic Bracket -->
+  <path d="M 22 20 H 74 C 77.31 20 80 22.69 80 26 V 46 C 80 48.21 78.21 50 76 50 H 52 C 48.69 50 46 52.69 46 56 V 60 H 34 C 31.79 60 30 58.21 30 56 V 34 C 30 31.79 31.79 30 34 30 H 66 V 26 C 66 23.79 64.21 22 62 22 H 22 Z" fill="currentColor"/>
+  <!-- Lower Logic Bracket (180deg Mirrored Rotation) -->
+  <path d="M 78 80 H 26 C 22.69 80 20 77.31 20 74 V 54 C 20 51.79 21.79 50 24 50 H 48 C 51.31 50 54 47.31 54 44 V 40 H 66 C 68.21 40 70 41.79 70 44 V 66 C 70 68.21 68.21 70 66 70 H 34 V 74 C 34 76.21 35.79 78 38 78 H 78 Z" fill="currentColor"/>
+</svg></div>
+                            <span class="ladder-label">32px</span>
+                        </div>
+                        <div class="ladder-item">
+                            <div class="ladder-glyph glyph-24"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Upper Logic Bracket -->
+  <path d="M 22 20 H 74 C 77.31 20 80 22.69 80 26 V 46 C 80 48.21 78.21 50 76 50 H 52 C 48.69 50 46 52.69 46 56 V 60 H 34 C 31.79 60 30 58.21 30 56 V 34 C 30 31.79 31.79 30 34 30 H 66 V 26 C 66 23.79 64.21 22 62 22 H 22 Z" fill="currentColor"/>
+  <!-- Lower Logic Bracket (180deg Mirrored Rotation) -->
+  <path d="M 78 80 H 26 C 22.69 80 20 77.31 20 74 V 54 C 20 51.79 21.79 50 24 50 H 48 C 51.31 50 54 47.31 54 44 V 40 H 66 C 68.21 40 70 41.79 70 44 V 66 C 70 68.21 68.21 70 66 70 H 34 V 74 C 34 76.21 35.79 78 38 78 H 78 Z" fill="currentColor"/>
+</svg></div>
+                            <span class="ladder-label">24px</span>
+                        </div>
+                        <div class="ladder-item">
+                            <div class="ladder-glyph glyph-16"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Upper Logic Bracket -->
+  <path d="M 22 20 H 74 C 77.31 20 80 22.69 80 26 V 46 C 80 48.21 78.21 50 76 50 H 52 C 48.69 50 46 52.69 46 56 V 60 H 34 C 31.79 60 30 58.21 30 56 V 34 C 30 31.79 31.79 30 34 30 H 66 V 26 C 66 23.79 64.21 22 62 22 H 22 Z" fill="currentColor"/>
+  <!-- Lower Logic Bracket (180deg Mirrored Rotation) -->
+  <path d="M 78 80 H 26 C 22.69 80 20 77.31 20 74 V 54 C 20 51.79 21.79 50 24 50 H 48 C 51.31 50 54 47.31 54 44 V 40 H 66 C 68.21 40 70 41.79 70 44 V 66 C 70 68.21 68.21 70 66 70 H 34 V 74 C 34 76.21 35.79 78 38 78 H 78 Z" fill="currentColor"/>
+</svg></div>
+                            <span class="ladder-label">16px</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Architectural Notes -->
+                <div class="var-notes-grid">
+                    <div class="note-block">
+                        <h5>Geometric Architecture</h5>
+                        <p>Two interlocking stepped logic brackets tracing the pathway from initial attempt to hints and breakthrough.</p>
+                    </div>
+                    <div class="note-block">
+                        <h5>Subtle Programming Homage</h5>
+                        <p>Reflects the CodeSage learning cycle: Input -> Analysis -> Progressive Hint -> Understanding. Highly technical, modern, and cerebral.</p>
+                    </div>
+                </div>
+            </article>
+    
+            <!-- Variation 6: The Continuous Logic Fold -->
+            <article class="variation-card" id="opt-6">
+                <div class="var-header">
+                    <div>
+                        <span class="var-badge">Variation A / D</span>
+                        <h3 class="var-name">Variation 6: The Continuous Logic Fold</h3>
+                        <div class="var-subtitle">Folded Geometric S with Optical Notch</div>
+                    </div>
+                    <div class="var-rating">
+                        Small-scale legibility rating:<br>
+                        <strong>Very High (9/10) — The single unified line feels friendly yet rigorous.</strong>
+                    </div>
+                </div>
+
+                <div class="var-display-grid">
+                    <!-- Swatches: Dark on Cream & Cream on Dark -->
+                    <div class="swatches-row">
+                        <!-- Dark on Cream -->
+                        <div class="swatch-box swatch-cream">
+                            <div class="swatch-icon-wrap">
+                                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Upper Loop -->
+  <path d="M 26 28 C 26 20.27 32.27 14 40 14 H 66 C 74.84 14 82 21.16 82 30 C 82 38.84 74.84 46 66 46 H 42 C 34.27 46 28 52.27 28 60 C 28 67.73 34.27 74 42 74 H 74" 
+        fill="none" stroke="currentColor" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Optical Negative Notch separating the loops at the center inflection -->
+  <line x1="50" y1="39" x2="50" y2="53" stroke="#F7F3EA" stroke-width="4" stroke-linecap="round"/>
+</svg>
+                            </div>
+                            <span class="swatch-label">Dark-on-Cream (#29483A on #F7F3EA)</span>
+                        </div>
+
+                        <!-- Cream on Dark -->
+                        <div class="swatch-box swatch-dark">
+                            <div class="swatch-icon-wrap">
+                                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Upper Loop -->
+  <path d="M 26 28 C 26 20.27 32.27 14 40 14 H 66 C 74.84 14 82 21.16 82 30 C 82 38.84 74.84 46 66 46 H 42 C 34.27 46 28 52.27 28 60 C 28 67.73 34.27 74 42 74 H 74" 
+        fill="none" stroke="currentColor" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Optical Negative Notch separating the loops at the center inflection -->
+  <line x1="50" y1="39" x2="50" y2="53" stroke="#F7F3EA" stroke-width="4" stroke-linecap="round"/>
+</svg>
+                            </div>
+                            <span class="swatch-label">Cream-on-Dark (#F7F3EA on #29483A)</span>
+                        </div>
+                    </div>
+
+                    <!-- Lockup Previews -->
+                    <div class="lockup-preview-card">
+                        <div>
+                            <span class="ladder-label" style="display:block; margin-bottom: 12px;">PRIMARY WORDMARK LOCKUP</span>
+                            <div class="brand-lockup-row">
+                                <div class="lockup-icon">
+                                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Upper Loop -->
+  <path d="M 26 28 C 26 20.27 32.27 14 40 14 H 66 C 74.84 14 82 21.16 82 30 C 82 38.84 74.84 46 66 46 H 42 C 34.27 46 28 52.27 28 60 C 28 67.73 34.27 74 42 74 H 74" 
+        fill="none" stroke="currentColor" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Optical Negative Notch separating the loops at the center inflection -->
+  <line x1="50" y1="39" x2="50" y2="53" stroke="#F7F3EA" stroke-width="4" stroke-linecap="round"/>
+</svg>
+                                </div>
+                                <div>
+                                    <div class="lockup-wordmark">CodeSage</div>
+                                    <div class="wordmark-subtext">AI Programming Mentor</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <span class="ladder-label" style="display:block; margin-bottom: 10px;">INVERTED NAV / EMBLEM LOCKUP</span>
+                            <div class="brand-lockup-dark">
+                                <div class="lockup-icon">
+                                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Upper Loop -->
+  <path d="M 26 28 C 26 20.27 32.27 14 40 14 H 66 C 74.84 14 82 21.16 82 30 C 82 38.84 74.84 46 66 46 H 42 C 34.27 46 28 52.27 28 60 C 28 67.73 34.27 74 42 74 H 74" 
+        fill="none" stroke="currentColor" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Optical Negative Notch separating the loops at the center inflection -->
+  <line x1="50" y1="39" x2="50" y2="53" stroke="#F7F3EA" stroke-width="4" stroke-linecap="round"/>
+</svg>
+                                </div>
+                                <div class="lockup-wordmark">CodeSage</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Size Ladder Test -->
+                <div class="size-ladder-strip">
+                    <div class="ladder-title">
+                        <span>Small-Size Legibility Verification Ladder</span>
+                        <span>128px • 64px • 48px • 32px • 24px • 16px</span>
+                    </div>
+
+                    <div class="ladder-row">
+                        <div class="ladder-item">
+                            <div class="ladder-glyph glyph-128"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Upper Loop -->
+  <path d="M 26 28 C 26 20.27 32.27 14 40 14 H 66 C 74.84 14 82 21.16 82 30 C 82 38.84 74.84 46 66 46 H 42 C 34.27 46 28 52.27 28 60 C 28 67.73 34.27 74 42 74 H 74" 
+        fill="none" stroke="currentColor" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Optical Negative Notch separating the loops at the center inflection -->
+  <line x1="50" y1="39" x2="50" y2="53" stroke="#F7F3EA" stroke-width="4" stroke-linecap="round"/>
+</svg></div>
+                            <span class="ladder-label">128px</span>
+                        </div>
+                        <div class="ladder-item">
+                            <div class="ladder-glyph glyph-64"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Upper Loop -->
+  <path d="M 26 28 C 26 20.27 32.27 14 40 14 H 66 C 74.84 14 82 21.16 82 30 C 82 38.84 74.84 46 66 46 H 42 C 34.27 46 28 52.27 28 60 C 28 67.73 34.27 74 42 74 H 74" 
+        fill="none" stroke="currentColor" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Optical Negative Notch separating the loops at the center inflection -->
+  <line x1="50" y1="39" x2="50" y2="53" stroke="#F7F3EA" stroke-width="4" stroke-linecap="round"/>
+</svg></div>
+                            <span class="ladder-label">64px</span>
+                        </div>
+                        <div class="ladder-item">
+                            <div class="ladder-glyph glyph-48"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Upper Loop -->
+  <path d="M 26 28 C 26 20.27 32.27 14 40 14 H 66 C 74.84 14 82 21.16 82 30 C 82 38.84 74.84 46 66 46 H 42 C 34.27 46 28 52.27 28 60 C 28 67.73 34.27 74 42 74 H 74" 
+        fill="none" stroke="currentColor" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Optical Negative Notch separating the loops at the center inflection -->
+  <line x1="50" y1="39" x2="50" y2="53" stroke="#F7F3EA" stroke-width="4" stroke-linecap="round"/>
+</svg></div>
+                            <span class="ladder-label">48px</span>
+                        </div>
+                        <div class="ladder-item">
+                            <div class="ladder-glyph glyph-32"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Upper Loop -->
+  <path d="M 26 28 C 26 20.27 32.27 14 40 14 H 66 C 74.84 14 82 21.16 82 30 C 82 38.84 74.84 46 66 46 H 42 C 34.27 46 28 52.27 28 60 C 28 67.73 34.27 74 42 74 H 74" 
+        fill="none" stroke="currentColor" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Optical Negative Notch separating the loops at the center inflection -->
+  <line x1="50" y1="39" x2="50" y2="53" stroke="#F7F3EA" stroke-width="4" stroke-linecap="round"/>
+</svg></div>
+                            <span class="ladder-label">32px</span>
+                        </div>
+                        <div class="ladder-item">
+                            <div class="ladder-glyph glyph-24"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Upper Loop -->
+  <path d="M 26 28 C 26 20.27 32.27 14 40 14 H 66 C 74.84 14 82 21.16 82 30 C 82 38.84 74.84 46 66 46 H 42 C 34.27 46 28 52.27 28 60 C 28 67.73 34.27 74 42 74 H 74" 
+        fill="none" stroke="currentColor" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Optical Negative Notch separating the loops at the center inflection -->
+  <line x1="50" y1="39" x2="50" y2="53" stroke="#F7F3EA" stroke-width="4" stroke-linecap="round"/>
+</svg></div>
+                            <span class="ladder-label">24px</span>
+                        </div>
+                        <div class="ladder-item">
+                            <div class="ladder-glyph glyph-16"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Upper Loop -->
+  <path d="M 26 28 C 26 20.27 32.27 14 40 14 H 66 C 74.84 14 82 21.16 82 30 C 82 38.84 74.84 46 66 46 H 42 C 34.27 46 28 52.27 28 60 C 28 67.73 34.27 74 42 74 H 74" 
+        fill="none" stroke="currentColor" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Optical Negative Notch separating the loops at the center inflection -->
+  <line x1="50" y1="39" x2="50" y2="53" stroke="#F7F3EA" stroke-width="4" stroke-linecap="round"/>
+</svg></div>
+                            <span class="ladder-label">16px</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Architectural Notes -->
+                <div class="var-notes-grid">
+                    <div class="note-block">
+                        <h5>Geometric Architecture</h5>
+                        <p>A pure continuous geometric S-curve with an engineered optical negative cut at the inflection nexus.</p>
+                    </div>
+                    <div class="note-block">
+                        <h5>Subtle Programming Homage</h5>
+                        <p>Embodies the unbroken continuity of programming mastery. Quiet, sophisticated, timeless software craftsmanship.</p>
+                    </div>
+                </div>
+            </article>
+    
+        </section>
+
+        <!-- Live In-Context Mockup -->
+        <section class="context-preview-section">
+            <h2 class="context-title">In-Context Application: The Floating Product Navbar</h2>
+            <p class="context-desc">
+                Testing the winning mark in its real-world habitat: the newly refined floating navigation bar on the CodeSage homepage.
+            </p>
+
+            <div class="mock-floating-nav">
+                <div class="mock-brand">
+                    <div class="mock-symbol">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Top Anchor Form -->
+  <path d="M 22 16 H 74 C 77.31 16 80 18.69 80 22 V 42 C 80 44.21 78.21 46 76 46 H 48 C 43.58 46 40 49.58 40 54 V 56 H 24 C 21.79 56 20 54.21 20 52 V 22 C 20 18.69 22.69 16 26 16 Z" fill="currentColor"/>
+  <!-- Bottom Anchor Form (180deg Rotational Symmetry) -->
+  <path d="M 78 84 H 26 C 22.69 84 20 81.31 20 78 V 58 C 20 55.79 21.79 54 24 54 H 52 C 56.42 54 60 50.42 60 46 V 44 H 76 C 78.21 44 80 45.79 80 48 V 78 C 80 81.31 77.31 84 74 84 Z" fill="currentColor"/>
+</svg>
+                    </div>
+                    <span class="mock-brand-name">CodeSage</span>
+                </div>
+
+                <div class="mock-center-links">
+                    <span>Product</span>
+                    <span>How It Works</span>
+                    <span>About</span>
+                </div>
+
+                <div style="display: flex; align-items: center; gap: 20px;">
+                    <span style="font-size: 0.875rem; color: #6B756E; font-weight: 500;">GitHub</span>
+                    <div class="mock-cta">Start Learning →</div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="bottom-action-bar">
+            CodeSage Brand Identity Specification • Designed with Mathematical Geometry & Negative Space Clarity
+        </footer>
+
+    </div>
+
+</body>
+</html>

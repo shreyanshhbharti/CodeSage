@@ -1,0 +1,6 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Top-Left Form: flat top, rounded outer corner, 45-deg inner chamfer -->
+  <path d="M 24 16 H 74 C 77.31 16 80 18.69 80 22 V 32 C 80 34.21 78.21 36 76 36 H 54 L 32 58 H 22 C 19.79 58 18 56.21 18 54 V 22 C 18 18.69 20.69 16 24 16 Z" fill="currentColor"/>
+  <!-- Bottom-Right Form (180deg Rotational Symmetry) -->
+  <path d="M 76 84 H 26 C 22.69 84 20 81.31 20 78 V 68 C 20 65.79 21.79 64 24 64 H 46 L 68 42 H 78 C 80.21 42 82 43.79 82 46 V 78 C 82 81.31 79.31 84 76 84 Z" fill="currentColor"/>
+</svg>

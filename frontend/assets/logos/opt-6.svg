@@ -1,0 +1,7 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Upper Loop -->
+  <path d="M 26 28 C 26 20.27 32.27 14 40 14 H 66 C 74.84 14 82 21.16 82 30 C 82 38.84 74.84 46 66 46 H 42 C 34.27 46 28 52.27 28 60 C 28 67.73 34.27 74 42 74 H 74" 
+        fill="none" stroke="currentColor" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Optical Negative Notch separating the loops at the center inflection -->
+  <line x1="50" y1="39" x2="50" y2="53" stroke="#F7F3EA" stroke-width="4" stroke-linecap="round"/>
+</svg>

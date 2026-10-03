@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeSage — Mentor Dashboard</title>
+    <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body class="dashboard-page">
+
+    <!-- ========================================== -->
+    <!-- 1. CodeSage Dashboard Header               -->
+    <!-- ========================================== -->
+    <header class="dashboard-header">
+        <div class="header-left">
+            <a href="index.html" class="dashboard-brand" aria-label="CodeSage Home">
+                <span class="brand-symbol" aria-hidden="true">
+                    <svg viewBox="0 0 120 120" width="28" height="28" fill="currentColor">
+                        <path d="M 30 10 H 85 V 40 H 45 V 70 H 10 V 30 Z" />
+                        <path d="M 90 110 H 35 V 80 H 75 V 50 H 110 V 90 Z" />
+                    </svg>
+                </span>
+                <span class="brand-text">CodeSage</span>
+            </a>
+            <span class="dashboard-badge">Dashboard v0.2</span>
+        </div>
+        
+        <div class="header-right">
+            <a href="index.html" class="home-link">← Back to Home</a>
+            <div class="profile-pill">
+                <div class="profile-avatar">S</div>
+                <span class="profile-name">Student</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- ========================================== -->
+    <!-- 2. Main Two-Column Workspace               -->
+    <!-- ========================================== -->
+    <main class="dashboard-main">
+        <div class="workspace-grid">
+
+            <!-- LEFT COLUMN: Code Editor Panel -->
+            <section class="panel editor-panel" aria-label="Code Editor Panel">
+                <div class="panel-top-bar">
+                    <div class="panel-heading">
+                        <span class="panel-icon">💻</span>
+                        <span>Code Editor</span>
+                    </div>
+                    <div class="editor-controls">
+                        <label for="language-select">Language:</label>
+                        <select id="language-select" class="language-dropdown">
+                            <option value="javascript">JavaScript</option>
+                            <option value="python">Python</option>
+                            <option value="cpp">C++</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="editor-body">
+                    <textarea 
+                        id="code-input" 
+                        class="code-textarea" 
+                        placeholder="// Enter or paste your code here to analyze...&#10;function solution() {&#10;    // Write code&#10;}"
+                        spellcheck="false"
+                    ></textarea>
+                </div>
+
+                <div class="panel-actions">
+                    <button id="analyze-btn" class="btn btn-primary">
+                        <span>⚡</span> Analyze Code
+                    </button>
+                </div>
+            </section>
+
+            <!-- RIGHT COLUMN: Mentor Panel -->
+            <section class="panel mentor-panel" aria-label="Mentor Guidance Panel">
+                <div class="panel-top-bar">
+                    <div class="panel-heading">
+                        <span class="panel-icon">🧠</span>
+                        <span>CodeSage Mentor</span>
+                    </div>
+                </div>
+
+                <div class="mentor-body">
+                    <!-- Mentor Message Area -->
+                    <div class="mentor-message-box">
+                        <p id="mentor-message">Hi! Submit your code and I'll help you understand it.</p>
+                    </div>
+
+                    <!-- Container for dynamically added hint cards -->
+                    <div id="hints-container" class="hints-container"></div>
+                </div>
+
+                <div class="panel-actions">
+                    <button id="hint-btn" class="btn btn-secondary">
+                        <span>💡</span> Get Hint
+                    </button>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- ========================================== -->
+        <!-- 3. Bottom Status Area                      -->
+        <!-- ========================================== -->
+        <footer class="status-bar">
+            <span id="status-dot" class="status-dot"></span>
+            <span id="status-text">Ready to analyze</span>
+        </footer>
+    </main>
+
+    <!-- JavaScript Logic -->
+    <script src="dashboard.js"></script>
+</body>
+</html>

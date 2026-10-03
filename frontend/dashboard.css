@@ -1,0 +1,394 @@
+/* ==========================================
+   CodeSage — Dashboard Stylesheet (v0.2)
+   ========================================== */
+
+/* Dashboard Layout */
+.dashboard-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg);
+}
+
+/* Dashboard Header Customization */
+.dashboard-header {
+    height: 70px;
+    padding: 0 40px;
+    background: var(--surface);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.dashboard-brand {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--text-ink);
+    text-decoration: none;
+    letter-spacing: -0.025em;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.dashboard-brand .brand-symbol {
+    width: 28px;
+    height: 28px;
+    color: var(--primary-deep);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.dashboard-brand .brand-symbol svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.dashboard-badge {
+    background-color: var(--surface-2);
+    color: var(--primary);
+    border: 1px solid var(--border);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.home-link {
+    text-decoration: none;
+    color: var(--muted);
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.home-link:hover {
+    color: var(--primary);
+}
+
+.profile-pill {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    padding: 6px 14px;
+    border-radius: 30px;
+    color: var(--text);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.profile-avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: var(--primary);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+/* Main Two-Column Workspace */
+.dashboard-main {
+    flex: 1;
+    padding: 30px 40px 20px 40px;
+    display: flex;
+    flex-direction: column;
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.workspace-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 24px;
+    flex: 1;
+    min-height: 520px;
+}
+
+/* Panel Common Styles */
+.panel {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 16px rgba(36, 51, 43, 0.04);
+    overflow: hidden;
+}
+
+.panel-top-bar {
+    padding: 14px 20px;
+    background: var(--surface-2);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.panel-heading {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--text);
+}
+
+.panel-icon {
+    font-size: 1.1rem;
+}
+
+/* Editor Panel Controls */
+.editor-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.editor-controls label {
+    font-size: 0.85rem;
+    color: var(--muted);
+    font-weight: 500;
+}
+
+.language-dropdown {
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background-color: var(--surface);
+    color: var(--text);
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.language-dropdown:focus {
+    border-color: var(--primary);
+}
+
+/* Code Textarea Area */
+.editor-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 16px 20px;
+    background: #FAFCFA;
+}
+
+.code-textarea {
+    width: 100%;
+    flex: 1;
+    min-height: 340px;
+    padding: 16px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: #FFFFFF;
+    color: #1E2D24;
+    font-family: "Consolas", "Courier New", monospace;
+    font-size: 14px;
+    line-height: 1.6;
+    resize: none;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.code-textarea:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(78, 110, 88, 0.15);
+}
+
+.code-textarea::placeholder {
+    color: #9AA8A0;
+}
+
+.panel-actions {
+    padding: 14px 20px;
+    border-top: 1px solid var(--border);
+    background: var(--surface);
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Buttons */
+.btn {
+    padding: 10px 22px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: #FFFFFF;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(78, 110, 88, 0.2);
+}
+
+.btn-secondary {
+    background-color: var(--surface-2);
+    color: var(--primary);
+    border: 1px solid var(--border);
+}
+
+.btn-secondary:hover {
+    background-color: #E2ECE6;
+    color: var(--primary-hover);
+}
+
+/* Mentor Panel Content */
+.mentor-body {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    overflow-y: auto;
+}
+
+.mentor-message-box {
+    background: var(--surface-2);
+    border-left: 4px solid var(--primary);
+    padding: 16px 18px;
+    border-radius: 0 8px 8px 0;
+    color: var(--text);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.mentor-message-box p {
+    margin: 0;
+}
+
+/* Hints Container */
+.hints-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.hint-card {
+    background: #FFFFFF;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px 16px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+    animation: fadeInSlide 0.3s ease-in-out;
+}
+
+@keyframes fadeInSlide {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hint-title {
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--secondary);
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.hint-text {
+    font-size: 0.92rem;
+    color: var(--text);
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Bottom Status Bar */
+.status-bar {
+    margin-top: 20px;
+    padding: 12px 20px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.88rem;
+    color: var(--muted);
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--accent);
+    display: inline-block;
+}
+
+.status-dot.active {
+    background-color: #2ECC71;
+    box-shadow: 0 0 0 3px rgba(46, 204, 113, 0.2);
+}
+
+.status-dot.warning {
+    background-color: #E67E22;
+    box-shadow: 0 0 0 3px rgba(230, 126, 34, 0.2);
+}
+
+/* Responsive Styles for Workspace */
+@media (max-width: 900px) {
+    .dashboard-header {
+        padding: 0 20px;
+    }
+
+    .dashboard-main {
+        padding: 20px 16px;
+    }
+
+    .workspace-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .code-textarea {
+        min-height: 240px;
+    }
+}

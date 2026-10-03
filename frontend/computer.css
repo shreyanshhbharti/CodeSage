@@ -1,0 +1,1470 @@
+/* ============================================================
+   CodeSage — Retro Workstation Scene Stylesheet
+   Physical 3D CRT Computer Scene & Desk Environment
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   1. Dedicated Machine Section & Real Desk Environment
+   ------------------------------------------------------------ */
+.codesage-machine-section {
+    position: relative;
+    height: 260vh;
+    background: #EFE7DA;
+    perspective: 1200px;
+    padding: 0;
+    margin: 0;
+    overflow: visible;
+}
+
+/* Desk Horizon Plane (Real Room Environment) */
+.desk-horizon-plane {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+/* Upper Wall Backdrop */
+.desk-wall-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 52%;
+    background: linear-gradient(180deg, #EDE5D8 0%, #E6DDCE 75%, #DFCFA 100%);
+    box-shadow: inset 0 -30px 40px rgba(41, 72, 58, 0.03);
+    will-change: transform;
+    transform-origin: center top;
+}
+
+/* Subtle Wall Ambient Light Sheen */
+.desk-wall-backdrop::after {
+    content: '';
+    position: absolute;
+    top: 15%;
+    left: 45%;
+    width: 800px;
+    height: 400px;
+    transform: translate(-50%, -20%);
+    background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.35) 0%, rgba(247, 243, 234, 0) 70%);
+}
+
+/* Lower Desk Surface Plane */
+.desk-surface-plane {
+    position: absolute;
+    top: 52%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, #D4C6B1 0%, #CBBDA8 30%, #BFB09A 100%);
+    box-shadow: inset 0 6px 12px rgba(0, 0, 0, 0.08);
+    will-change: transform;
+}
+
+/* Horizon Seam Line */
+.desk-seam-edge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(160, 146, 126, 0.4) 0%, rgba(135, 120, 100, 0.8) 50%, rgba(160, 146, 126, 0.4) 100%);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+/* ------------------------------------------------------------
+   2. Sticky Viewport Stage & Protected UI Zones
+   ------------------------------------------------------------ */
+.machine-sticky-viewport {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 102px; /* Protected clearance below floating navbar (navbar ends at 88px) */
+    box-sizing: border-box;
+    z-index: 10;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+/* ------------------------------------------------------------
+   3. Refined Editorial Chapter Navigation & Minimal Captions
+   ------------------------------------------------------------ */
+.machine-story-stage {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px; /* 102px + 10px = 112px => 24px gap below navbar */
+    margin-bottom: 26px; /* 26px gap above CRT */
+    pointer-events: auto;
+    z-index: 30;
+    width: 100%;
+    max-width: 960px;
+    padding: 0 16px;
+}
+
+.machine-story-markers {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    position: relative;
+    padding-bottom: 3px;
+}
+
+.story-chapter-btn,
+.story-marker-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    padding: 4px 4px 6px;
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #8C8474;
+    cursor: pointer;
+    position: relative;
+    transition: color 0.25s ease, opacity 0.25s ease;
+    text-decoration: none;
+    box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+}
+
+.story-chapter-btn:hover,
+.story-marker-pill:hover {
+    color: var(--text-ink);
+}
+
+.story-chapter-btn .step-num,
+.story-marker-pill .step-num {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    font-weight: 700;
+    color: #A89E8E;
+    letter-spacing: 0.04em;
+    transition: color 0.25s ease;
+}
+
+.story-chapter-btn .step-label,
+.story-marker-pill .step-label {
+    letter-spacing: -0.01em;
+}
+
+/* Thin Active Underline Accent (Editorial Style) */
+.story-chapter-btn::after,
+.story-marker-pill::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 2px;
+    right: 2px;
+    height: 2px;
+    background: var(--primary);
+    border-radius: 2px;
+    opacity: 0;
+    transform: scaleX(0.2);
+    transition: opacity 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), background 0.25s ease;
+}
+
+.story-chapter-btn.active,
+.story-marker-pill.active {
+    background: transparent;
+    color: var(--text-ink);
+    font-weight: 700;
+    box-shadow: none;
+    transform: none;
+}
+
+.story-chapter-btn.active .step-num,
+.story-marker-pill.active .step-num {
+    color: var(--primary-deep);
+}
+
+.story-chapter-btn.active::after,
+.story-marker-pill.active::after {
+    opacity: 1;
+    transform: scaleX(1);
+}
+
+/* Minimal Editorial Caption */
+.machine-story-caption {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 5px;
+    font-size: 0.71875rem;
+    color: #7D7466;
+    letter-spacing: 0.01em;
+    transition: opacity 0.25s ease;
+    height: 18px;
+}
+
+.machine-story-caption .caption-title {
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 0.625rem;
+    letter-spacing: 0.08em;
+    color: var(--primary-deep);
+    text-transform: uppercase;
+}
+
+.machine-story-caption .caption-sep {
+    color: #B8ADA0;
+    font-size: 0.625rem;
+}
+
+.machine-story-caption .caption-desc {
+    font-style: italic;
+    color: #5C5549;
+}
+
+/* ------------------------------------------------------------
+   4. Desk Environment Layer (Objects Grounded on Desk)
+   ------------------------------------------------------------ */
+.desk-environment-layer {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 8;
+}
+
+/* Ceramic Coffee Mug (Physically Placed in Foreground on Desk) */
+.desk-mug {
+    position: absolute;
+    bottom: 22%;
+    left: calc(50% - 490px);
+    width: 52px;
+    height: 58px;
+    z-index: 15;
+    pointer-events: auto;
+    transition: transform 0.25s ease;
+}
+
+.desk-mug:hover {
+    transform: translateY(-3px) scale(1.03);
+}
+
+.mug-shadow {
+    position: absolute;
+    bottom: -6px;
+    left: 2px;
+    width: 60px;
+    height: 18px;
+    background: radial-gradient(ellipse at center, rgba(35, 30, 24, 0.45) 0%, rgba(35, 30, 24, 0.15) 50%, transparent 80%);
+    border-radius: 50%;
+    filter: blur(4px);
+}
+
+.mug-vessel {
+    position: relative;
+    width: 48px;
+    height: 56px;
+}
+
+.mug-top-ellipse {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 48px;
+    height: 18px;
+    background: #E8E1D2;
+    border: 2px solid #C4B9A6;
+    border-radius: 50%;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mug-coffee-surface {
+    width: 40px;
+    height: 12px;
+    background: #3B281B;
+    border-radius: 50%;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.mug-side-cylinder {
+    position: absolute;
+    top: 8px;
+    left: 0;
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(90deg, #ECE5D8 0%, #FAF7F0 30%, #E3D9C8 80%, #C8BCAB 100%);
+    border: 2px solid #C4B9A6;
+    border-top: none;
+    border-radius: 0 0 18px 18px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset -4px 0 6px rgba(0, 0, 0, 0.08);
+}
+
+.mug-brand-glyph {
+    color: var(--primary-deep);
+    opacity: 0.75;
+    margin-top: 4px;
+}
+
+.mug-handle-curve {
+    position: absolute;
+    top: 14px;
+    left: -14px;
+    width: 16px;
+    height: 30px;
+    border: 4px solid #DFD5C4;
+    border-right: none;
+    border-radius: 12px 0 0 12px;
+    z-index: 1;
+    box-shadow: -2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Coiled Black Data Cable */
+.desk-cable-wrap {
+    position: absolute;
+    bottom: 24%;
+    right: calc(50% - 490px);
+    width: 280px;
+    height: 80px;
+    pointer-events: none;
+    opacity: 0.85;
+}
+
+.desk-cable-svg {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 6px 6px rgba(35, 30, 24, 0.35));
+}
+
+/* ------------------------------------------------------------
+   5. Physical Retro Computer Rig (3D Form & Asymmetry)
+   ------------------------------------------------------------ */
+.retro-computer-rig {
+    position: relative;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    pointer-events: auto;
+    transform-style: preserve-3d;
+    transform-origin: center top; /* Anchors top edge safely below story controls during forward camera dolly */
+    will-change: transform;
+}
+
+/* Multi-Layered Physical Desk Cast Shadow */
+.monitor-desk-shadow {
+    position: absolute;
+    bottom: 120px;
+    left: 45%;
+    transform: translateX(-40%);
+    width: 900px;
+    height: 60px;
+    background: radial-gradient(ellipse at center, rgba(30, 24, 18, 0.55) 0%, rgba(30, 24, 18, 0.22) 45%, transparent 75%);
+    border-radius: 50%;
+    filter: blur(14px);
+    pointer-events: none;
+    z-index: 2;
+    will-change: transform, opacity;
+}
+
+/* ------------------------------------------------------------
+   6. 3D CRT Monitor Enclosure (Chassis & Depth Extrusions)
+   ------------------------------------------------------------ */
+.crt-monitor-chassis {
+    position: relative;
+    width: 860px;
+    max-width: 90vw;
+    z-index: 10;
+}
+
+/* Right Side 3D Housing Extrusion (Gives visible chassis thickness!) */
+.crt-depth-side {
+    position: absolute;
+    top: 12px;
+    right: -24px;
+    width: 32px;
+    height: calc(100% - 36px);
+    background: linear-gradient(90deg, #A89D8B 0%, #8C816F 40%, #766B5A 100%);
+    transform: skewY(-16deg);
+    transform-origin: top left;
+    border-radius: 0 10px 14px 0;
+    box-shadow: inset -2px 0 4px rgba(0, 0, 0, 0.4), 8px 12px 24px rgba(25, 20, 15, 0.3);
+    z-index: 8;
+    overflow: hidden;
+}
+
+.depth-side-louvers {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    padding: 24px 6px 10px;
+}
+
+.depth-side-louvers span {
+    display: block;
+    height: 3px;
+    background: #5A5143;
+    border-radius: 2px;
+    box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
+}
+
+/* Top 3D Taper Bevel */
+.crt-depth-top {
+    position: absolute;
+    top: -14px;
+    left: 18px;
+    width: calc(100% - 24px);
+    height: 18px;
+    background: linear-gradient(180deg, #DBD3C3 0%, #C8BEAC 100%);
+    transform: skewX(-24deg);
+    border-radius: 8px 16px 0 0;
+    box-shadow: inset 0 2px 3px rgba(255, 255, 255, 0.7);
+    z-index: 8;
+}
+
+.top-vent-recess {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    padding-top: 5px;
+}
+
+.top-vent-recess span {
+    width: 32px;
+    height: 2px;
+    background: #9D9280;
+    border-radius: 1px;
+}
+
+/* Front Bezel Housing */
+.crt-front-bezel {
+    position: relative;
+    background: linear-gradient(180deg, #F0E9DC 0%, #E5DDD0 30%, #D8CFBF 100%);
+    border: 2px solid #C4BAA7;
+    border-radius: 18px 18px 12px 12px;
+    padding: 10px 14px 6px;
+    box-shadow: 
+        0 14px 34px rgba(32, 26, 20, 0.2),
+        inset 0 2px 4px rgba(255, 255, 255, 0.85),
+        inset 0 -3px 6px rgba(0, 0, 0, 0.12),
+        inset 2px 0 3px rgba(255, 255, 255, 0.5);
+    z-index: 10;
+}
+
+/* ------------------------------------------------------------
+   7. Sticky Notes (Taped Directly on Bezel Like Reference!)
+   ------------------------------------------------------------ */
+.bezel-sticky-note {
+    position: absolute;
+    padding: 12px 10px 10px;
+    border-radius: 2px 2px 6px 2px;
+    box-shadow: 2px 6px 16px rgba(25, 20, 15, 0.18), 0 1px 3px rgba(0, 0, 0, 0.1);
+    z-index: 25;
+    transition: transform 0.2s ease;
+    cursor: default;
+}
+
+.bezel-sticky-note:hover {
+    transform: scale(1.05) rotate(0deg) !important;
+}
+
+/* Top-Left Bezel Note (Taped directly onto plastic) */
+.note-top-left {
+    top: -6px;
+    left: -38px;
+    width: 135px;
+    background: #FFFCE8;
+    border: 1px solid #ECE3C4;
+    transform: rotate(-6deg);
+    color: #383327;
+}
+
+.note-top-left .tape-strip {
+    position: absolute;
+    top: -6px;
+    left: 45%;
+    transform: translateX(-50%);
+    width: 44px;
+    height: 15px;
+    background: rgba(255, 255, 255, 0.7);
+    border-left: 1px dashed rgba(0, 0, 0, 0.12);
+    border-right: 1px dashed rgba(0, 0, 0, 0.12);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+.sticky-rule-tag {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.625rem;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    color: #8A6D3B;
+    margin-bottom: 4px;
+}
+
+.sticky-text {
+    font-size: 0.75rem;
+    font-style: italic;
+    line-height: 1.35;
+    margin-bottom: 6px;
+}
+
+.sticky-sub-tag {
+    font-family: var(--font-mono);
+    font-size: 0.5rem;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    background: rgba(138, 109, 59, 0.12);
+    padding: 1px 5px;
+    border-radius: 2px;
+    color: #5C4620;
+}
+
+/* Lower-Left Bezel Note */
+.note-bottom-left {
+    bottom: 16px;
+    left: -36px;
+    background: #FCE8E6;
+    border: 1px solid #EAC8C5;
+    padding: 7px 10px;
+    transform: rotate(5deg);
+    box-shadow: 2px 4px 12px rgba(25, 20, 15, 0.15);
+}
+
+.sticky-small-text {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    font-weight: 700;
+    color: #8C4740;
+}
+
+/* Right Bezel Note Cluster */
+.bezel-sticky-cluster {
+    position: absolute;
+    top: 30px;
+    right: -64px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    z-index: 25;
+}
+
+.note-right-mint {
+    position: relative;
+    width: 130px;
+    background: #E8F4EC;
+    border: 1px solid #CADECF;
+    transform: rotate(4deg);
+    color: #274530;
+}
+
+.sticky-code {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    line-height: 1.35;
+    color: #2E523A;
+}
+
+.note-right-yellow {
+    position: relative;
+    margin-top: -6px;
+    margin-left: 14px;
+    width: 120px;
+    background: #FEF9D9;
+    border: 1px solid #E6DEB0;
+    transform: rotate(-3deg);
+    padding: 6px 8px;
+}
+
+.sticky-mini-tag {
+    font-family: var(--font-mono);
+    font-size: 0.625rem;
+    font-weight: 700;
+    color: #635722;
+}
+
+/* ------------------------------------------------------------
+   8. Inset Screen Well & Curved CRT Glass Tube
+   ------------------------------------------------------------ */
+.crt-screen-bezel-recess {
+    background: #C4BAA7;
+    border: 1px solid #A89D8A;
+    border-radius: 14px;
+    padding: 6px;
+    box-shadow: 
+        inset 0 4px 14px rgba(0, 0, 0, 0.35),
+        inset 0 -2px 4px rgba(255, 255, 255, 0.6),
+        0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.crt-glass-tube {
+    position: relative;
+    background: #111814;
+    border: 2px solid #233027;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 
+        inset 0 0 24px rgba(0, 0, 0, 0.9),
+        inset 0 0 6px rgba(0, 0, 0, 0.7),
+        0 0 16px rgba(78, 110, 88, 0.15);
+}
+
+/* Subtle Optical Glare & Scanlines (Non-obstructive) */
+.crt-reflection-glare {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 65%;
+    height: 48%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 40%, transparent 70%);
+    pointer-events: none;
+    z-index: 15;
+    border-radius: 0 14px 0 120px;
+}
+
+.crt-scanline-raster {
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.1) 0px,
+        rgba(0, 0, 0, 0.1) 1px,
+        transparent 1px,
+        transparent 3px
+    );
+    pointer-events: none;
+    z-index: 14;
+    opacity: 0.3;
+}
+
+.crt-vignette-frame {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, transparent 74%, rgba(10, 16, 12, 0.4) 100%);
+    pointer-events: none;
+    z-index: 13;
+}
+
+/* ------------------------------------------------------------
+   9. Screen Workspace (Vintage Cognitive IDE)
+   ------------------------------------------------------------ */
+.crt-interactive-viewport {
+    position: relative;
+    background: #FAF7F0;
+    display: flex;
+    flex-direction: column;
+    z-index: 12;
+    min-height: 250px;
+}
+
+/* Classic Workstation OS Header Bar */
+.workstation-os-bar {
+    background: #1E2721;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 5px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.os-menu-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    color: #98A79E;
+}
+
+.os-sys-bullet {
+    color: #50FA7B;
+    font-size: 0.625rem;
+}
+
+.os-menu-item {
+    cursor: default;
+    transition: color 0.15s ease;
+}
+
+.os-menu-item:hover,
+.os-menu-item.active-menu {
+    color: #F7F3EA;
+}
+
+.os-problem-picker {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.os-picker-label {
+    font-family: var(--font-mono);
+    font-size: 0.625rem;
+    font-weight: 700;
+    color: #7ADFBB;
+    letter-spacing: 0.8px;
+}
+
+.os-dropdown {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    font-weight: 600;
+    color: #FFFFFF;
+    background: #2B3830;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    padding: 3px 8px;
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+}
+
+.os-status-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-family: var(--font-mono);
+    font-size: 0.625rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #50FA7B;
+    background: rgba(80, 250, 123, 0.12);
+    padding: 2px 7px;
+    border-radius: 3px;
+}
+
+.os-indicator-light {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #50FA7B;
+    box-shadow: 0 0 5px #50FA7B;
+}
+
+/* Compact Split Workspace Inside CRT */
+.crt-interactive-viewport .app-workspace-split {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    min-height: 195px;
+    background: var(--surface);
+}
+
+.crt-interactive-viewport .app-editor-pane {
+    background: #151E19;
+    border-right: 1px solid var(--border-warm);
+    display: flex;
+    flex-direction: column;
+}
+
+.crt-interactive-viewport .pane-tab-strip {
+    background: #101713;
+    padding: 6px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.crt-interactive-viewport .file-tab {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #E2ECE6;
+}
+
+.crt-interactive-viewport .tab-bullet {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #7ADFBB;
+}
+
+.crt-interactive-viewport .lang-tag {
+    font-family: var(--font-mono);
+    font-size: 0.625rem;
+    color: #8C9E94;
+}
+
+.crt-interactive-viewport .editor-code-body {
+    padding: 8px 10px;
+    display: flex;
+    gap: 10px;
+    flex: 1;
+    overflow-x: auto;
+}
+
+.crt-interactive-viewport .code-line-numbers {
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    line-height: 1.42;
+    color: #495D51;
+    user-select: none;
+    text-align: right;
+}
+
+.crt-interactive-viewport .code-pre-element {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    line-height: 1.42;
+    color: #E2ECE6;
+    flex: 1;
+}
+
+.crt-interactive-viewport .c-kw { color: #8BE9FD; font-weight: 600; }
+.crt-interactive-viewport .c-fn { color: #50FA7B; font-weight: 600; }
+.crt-interactive-viewport .c-cm { color: #6D8276; font-style: italic; }
+.crt-interactive-viewport .c-warn-line {
+    background: rgba(216, 180, 90, 0.16);
+    border-left: 2px solid #D8B45A;
+    padding: 1px 4px;
+    display: inline-block;
+    width: 100%;
+}
+
+.crt-interactive-viewport .editor-status-strip {
+    background: #0E1410;
+    padding: 3px 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--font-mono);
+    font-size: 0.5625rem;
+    color: #7B8F84;
+}
+
+.crt-interactive-viewport .status-warning {
+    color: #D8B45A;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* Right Mentor Pane */
+.crt-interactive-viewport .app-mentor-pane {
+    background: #FAF7F0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 8px 10px;
+}
+
+.crt-interactive-viewport .mentor-pane-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 4px;
+    border-bottom: 1px solid var(--border-warm);
+    margin-bottom: 4px;
+}
+
+.crt-interactive-viewport .mentor-id-group {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.crt-interactive-viewport .mentor-monogram {
+    width: 15px;
+    height: 15px;
+    color: var(--primary-deep);
+}
+
+.crt-interactive-viewport .mentor-title {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--text-ink);
+}
+
+.crt-interactive-viewport .mentor-caption {
+    font-family: var(--font-mono);
+    font-size: 0.5rem;
+    color: var(--text-muted);
+}
+
+.crt-interactive-viewport .tier-indicator {
+    font-family: var(--font-mono);
+    font-size: 0.5625rem;
+    font-weight: 700;
+    color: var(--primary);
+    background: rgba(78, 110, 88, 0.1);
+    padding: 1px 5px;
+    border-radius: 3px;
+}
+
+.crt-interactive-viewport .mentor-observation-card {
+    background: #FFFFFF;
+    border: 1px solid var(--border-warm);
+    border-radius: 5px;
+    padding: 5px 8px;
+    margin-bottom: 5px;
+}
+
+.crt-interactive-viewport .obs-header {
+    font-family: var(--font-mono);
+    font-size: 0.5rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    letter-spacing: 0.8px;
+    display: block;
+    margin-bottom: 1px;
+}
+
+.crt-interactive-viewport #preview-obs-text {
+    font-size: 0.6875rem;
+    color: #3E4540;
+    line-height: 1.3;
+}
+
+.crt-interactive-viewport .mentor-guidance-card {
+    background: #F4F0E6;
+    border-left: 3px solid var(--primary);
+    border-radius: 4px;
+    padding: 5px 8px;
+    margin-bottom: 5px;
+}
+
+.crt-interactive-viewport .guidance-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2px;
+}
+
+.crt-interactive-viewport .guidance-num {
+    font-size: 0.625rem;
+    font-weight: 700;
+    color: var(--primary-deep);
+}
+
+.crt-interactive-viewport .guidance-tier {
+    font-family: var(--font-mono);
+    font-size: 0.5rem;
+    color: var(--text-muted);
+}
+
+.crt-interactive-viewport .guidance-text {
+    font-size: 0.6875rem;
+    color: #2D332F;
+    line-height: 1.3;
+}
+
+.crt-interactive-viewport .guidance-stepper-dashes {
+    display: flex;
+    gap: 3px;
+    margin-bottom: 4px;
+}
+
+.crt-interactive-viewport .dash-seg {
+    flex: 1;
+    height: 2.5px;
+    background: #D8D0C2;
+    border-radius: 2px;
+    transition: background 0.25s ease;
+}
+
+.crt-interactive-viewport .dash-seg.active {
+    background: var(--primary);
+}
+
+.crt-interactive-viewport .mentor-pane-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+    padding-top: 4px;
+    border-top: 1px solid var(--border-warm);
+}
+
+.crt-interactive-viewport .btn-hint-stepper {
+    background: var(--primary);
+    color: #F7F3EA;
+    border: none;
+    border-radius: 4px;
+    padding: 4px 9px;
+    font-size: 0.625rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    transition: background 0.15s ease;
+}
+
+.crt-interactive-viewport .btn-hint-stepper:hover {
+    background: var(--primary-deep);
+}
+
+.crt-interactive-viewport .link-open-workspace {
+    font-size: 0.625rem;
+    font-weight: 600;
+    color: var(--primary);
+    text-decoration: none;
+}
+
+/* Bottom App Metrics Strip */
+.crt-interactive-viewport .app-bottom-metrics {
+    background: #FAF7F0;
+    border-top: 1px solid var(--border-warm);
+    padding: 3px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.5625rem;
+    color: var(--text-muted);
+}
+
+.crt-interactive-viewport .m-label {
+    font-family: var(--font-mono);
+    color: #8A8172;
+}
+
+/* CRT Screen Off / Standby Mode */
+.crt-glass-tube.crt-screen-off .crt-interactive-viewport {
+    opacity: 0;
+    filter: brightness(0);
+    pointer-events: none;
+    transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), filter 0.35s ease;
+}
+
+.crt-glass-tube.crt-screen-off {
+    background: #090E0B;
+    box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.98);
+}
+
+/* ------------------------------------------------------------
+   10. Lower Bezel Face: Floppy Drive, Badges & Controls
+   ------------------------------------------------------------ */
+.crt-lower-control-strip {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 10px 2px;
+    color: var(--primary-deep);
+}
+
+/* CodeSage Brand Plaque */
+.bezel-brand-plaque {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.bezel-mark {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-deep);
+}
+
+.bezel-title {
+    font-size: 0.8125rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: #2D3830;
+}
+
+.bezel-model-code {
+    font-family: var(--font-mono);
+    font-size: 0.5625rem;
+    font-weight: 700;
+    color: #7D7364;
+    background: rgba(0, 0, 0, 0.06);
+    padding: 1px 4px;
+    border-radius: 2px;
+}
+
+/* Floppy Disk Drive Assembly (Authentic Retro Component!) */
+.floppy-drive-assembly {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #36322C;
+    border: 1px solid #5A5348;
+    border-radius: 3px;
+    padding: 3px 8px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.floppy-slot-gate {
+    width: 60px;
+    height: 5px;
+    background: #14120F;
+    border-radius: 1px;
+    position: relative;
+}
+
+.slot-shadow-line {
+    position: absolute;
+    top: 1px;
+    left: 4px;
+    right: 4px;
+    height: 1px;
+    background: #4A443A;
+}
+
+.floppy-eject-btn {
+    width: 14px;
+    height: 7px;
+    background: #6B6254;
+    border: 1px solid #4D4539;
+    border-radius: 1px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+.floppy-activity-led {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #3B704A;
+    box-shadow: 0 0 2px #50FA7B;
+}
+
+/* Tactile Control Dials & Rocker Switch */
+.bezel-tactile-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tactile-dial {
+    width: 12px;
+    height: 12px;
+    background: linear-gradient(135deg, #DDD5C6 0%, #BCB19E 100%);
+    border: 1px solid #9D9280;
+    border-radius: 50%;
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.8), 0 1px 3px rgba(0, 0, 0, 0.2);
+    position: relative;
+    cursor: pointer;
+}
+
+.tactile-dial::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 5px;
+    width: 1px;
+    height: 4px;
+    background: #50473A;
+}
+
+.power-assembly {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-left: 4px;
+}
+
+.crt-power-led {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #50FA7B;
+    box-shadow: 0 0 5px #50FA7B, 0 0 10px rgba(80, 250, 123, 0.7);
+    display: inline-block;
+    animation: ledPulse 3.5s ease-in-out infinite;
+}
+
+@keyframes ledPulse {
+    0%, 100% { opacity: 1; filter: drop-shadow(0 0 3px #50FA7B); }
+    50% { opacity: 0.55; filter: drop-shadow(0 0 1px #50FA7B); }
+}
+
+.bezel-power-rocker {
+    width: 20px;
+    height: 11px;
+    background: linear-gradient(180deg, #BAAFA0 0%, #A59A8B 100%);
+    border: 1px solid #7D7364;
+    border-radius: 2px;
+    cursor: pointer;
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.6), 0 1px 2px rgba(0, 0, 0, 0.25);
+    transition: transform 0.1s ease;
+}
+
+.bezel-power-rocker:active {
+    transform: translateY(1px);
+    box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.4);
+}
+
+/* ------------------------------------------------------------
+   11. Heavy Swivel Pedestal Base (Connects Monitor to Desk)
+   ------------------------------------------------------------ */
+.crt-pedestal-stand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -2px;
+    z-index: 5;
+}
+
+.pedestal-ball-joint {
+    width: 100px;
+    height: 8px;
+    background: linear-gradient(180deg, #9C917F 0%, #7D7262 100%);
+    border: 1px solid #6E6354;
+    box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.45);
+}
+
+.pedestal-flared-base {
+    width: 200px;
+    height: 8px;
+    background: linear-gradient(180deg, #CCC2B3 0%, #B8AD9C 100%);
+    border: 1px solid #9D9281;
+    border-radius: 3px 3px 6px 6px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2), inset 0 1px 2px rgba(255, 255, 255, 0.65);
+}
+
+/* ------------------------------------------------------------
+   12. Separate Retro Mechanical Keyboard in Foreground
+   ------------------------------------------------------------ */
+.retro-keyboard-rig {
+    position: relative;
+    width: 620px;
+    max-width: 88vw;
+    margin-top: 6px;
+    z-index: 20;
+    pointer-events: auto;
+}
+
+/* Keyboard Ambient Shadow on Desk */
+.keyboard-desk-shadow {
+    position: absolute;
+    bottom: -6px;
+    left: 2%;
+    width: 96%;
+    height: 16px;
+    background: radial-gradient(ellipse at center, rgba(30, 24, 18, 0.5) 0%, rgba(30, 24, 18, 0.15) 50%, transparent 80%);
+    border-radius: 50%;
+    filter: blur(5px);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.keyboard-angled-body {
+    position: relative;
+    background: linear-gradient(180deg, #E6DFD2 0%, #D8D0BF 50%, #C8BFAD 100%);
+    border: 2px solid #BAAF9D;
+    border-radius: 8px 8px 12px 12px;
+    padding: 6px 12px 8px;
+    box-shadow: 
+        0 12px 24px rgba(25, 20, 15, 0.22),
+        0 2px 6px rgba(0, 0, 0, 0.1),
+        inset 0 2px 2px rgba(255, 255, 255, 0.75),
+        inset 0 -3px 5px rgba(0, 0, 0, 0.18);
+    transform: perspective(700px) rotateX(10deg);
+    transform-origin: top center;
+    z-index: 2;
+}
+
+.kb-front-lip {
+    position: absolute;
+    bottom: -3px;
+    left: 10px;
+    right: 10px;
+    height: 3px;
+    background: #AFA492;
+    border-radius: 0 0 5px 5px;
+}
+
+.kb-keycap-tray {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.kb-key-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+}
+
+.fn-row {
+    margin-bottom: 1px;
+}
+
+.key {
+    background: linear-gradient(180deg, #F8F5EE 0%, #E7E0D3 100%);
+    border: 1px solid #BCB19F;
+    border-bottom: 2px solid #998F7E;
+    border-radius: 3px;
+    height: 19px;
+    min-width: 22px;
+    padding: 0 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-mono);
+    font-size: 0.52rem;
+    font-weight: 700;
+    color: #4D463C;
+    user-select: none;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.08), inset 0 1px 1px rgba(255, 255, 255, 0.75);
+    transition: transform 0.08s ease, box-shadow 0.08s ease, background 0.08s ease;
+    cursor: pointer;
+}
+
+.key:hover {
+    transform: translateY(1px);
+    border-bottom-width: 1px;
+    background: #EFE9DD;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12);
+}
+
+.key:active {
+    transform: translateY(2px);
+    border-bottom-width: 1px;
+    background: #E3DCCF;
+}
+
+.key-sage {
+    background: linear-gradient(180deg, #587962 0%, #46654F 100%);
+    color: #F7F3EA;
+    border-color: #38523F;
+    border-bottom-color: #273A2D;
+}
+
+.key-sage:hover {
+    background: #3B5743;
+}
+
+.key-esc {
+    background: linear-gradient(180deg, #DF7564 0%, #C95F4E 100%);
+    color: #FFFFFF;
+    border-color: #A94B3C;
+    border-bottom-color: #8C392C;
+}
+
+.key-accent {
+    background: #EAE3D4;
+    color: var(--primary);
+}
+
+.key-backspace { min-width: 40px; }
+.key-tab { min-width: 38px; }
+.key-caps { min-width: 44px; }
+.key-return { min-width: 48px; background: #DFD7C7; }
+.key-shift-l { min-width: 54px; }
+.key-shift-r { min-width: 58px; }
+.key-mod { min-width: 34px; background: #DDD5C5; }
+.key-space { flex: 1; max-width: 220px; height: 23px; }
+.key-spacer { width: 10px; }
+
+/* ------------------------------------------------------------
+   13. Responsive Breakpoints & Viewport Fitting
+   ------------------------------------------------------------ */
+@media (max-width: 1200px) {
+    .crt-monitor-chassis { width: 720px; }
+    .retro-keyboard-rig { width: 620px; }
+    .note-top-left { left: -14px; }
+    .bezel-sticky-cluster { right: -18px; }
+    .desk-mug { left: 16px; }
+    .desk-cable-wrap { display: none; }
+}
+
+@media (max-width: 960px) {
+    .codesage-machine-section {
+        height: auto;
+        min-height: auto;
+        padding: 30px 0 60px;
+    }
+
+    .desk-horizon-plane {
+        position: absolute;
+        height: 100%;
+    }
+
+    .machine-sticky-viewport {
+        position: relative;
+        top: 0;
+        height: auto;
+        padding-top: 10px;
+    }
+
+    .retro-computer-rig {
+        transform: none !important;
+    }
+
+    .crt-depth-side,
+    .crt-depth-top {
+        display: none;
+    }
+
+    .desk-environment-layer {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .crt-monitor-chassis {
+        width: 100%;
+        max-width: calc(100vw - 28px);
+    }
+
+    .crt-front-bezel {
+        padding: 10px;
+        border-radius: 16px;
+    }
+
+    .bezel-sticky-note,
+    .bezel-sticky-cluster {
+        display: none; /* remove clutter on mobile */
+    }
+
+    .crt-lower-control-strip {
+        flex-direction: column;
+        gap: 6px;
+        align-items: flex-start;
+    }
+
+    .floppy-drive-assembly {
+        display: none;
+    }
+
+    .retro-keyboard-rig {
+        display: none; /* monitor-focused on mobile */
+    }
+
+    .monitor-desk-shadow {
+        display: none;
+    }
+
+    .crt-interactive-viewport .app-workspace-split {
+        grid-template-columns: 1fr;
+    }
+
+    .crt-interactive-viewport .app-editor-pane {
+        border-right: none;
+        border-bottom: 1px solid var(--border-warm);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .retro-computer-rig {
+        transform: none !important;
+        transition: none !important;
+    }
+    .crt-power-led {
+        animation: none !important;
+    }
+}

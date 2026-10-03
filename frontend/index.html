@@ -3,333 +3,830 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CodeSage — AI Programming Mentor</title>
+    <title>CodeSage — AI Programming Mentor | Learn How to Find the Answer</title>
+    <meta name="description" content="CodeSage is an AI programming mentor that analyzes your code, explains your mistakes, and provides progressive hints so you build real problem-solving intuition.">
+    
+    <!-- Google Fonts: Plus Jakarta Sans, Playfair Display (Editorial Serif), & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="computer.css">
 </head>
 <body>
 
-<!--    Header     -->
-
-    <header>
-        <div class="logo">
-            CodeSage
+    <!-- ========================================== -->
+    <!-- Floating Product Navigation                -->
+    <!-- ========================================== -->
+    <header class="floating-navbar" id="floating-navbar">
+        <div class="nav-brand-wrap">
+            <a href="#hero" class="brand-link" aria-label="CodeSage Home">
+                <span class="brand-symbol" aria-hidden="true">
+                    <svg viewBox="0 0 120 120" width="30" height="30" fill="currentColor">
+                        <path d="M 30 10 H 85 V 40 H 45 V 70 H 10 V 30 Z" />
+                        <path d="M 90 110 H 35 V 80 H 75 V 50 H 110 V 90 Z" />
+                    </svg>
+                </span>
+                <span class="brand-text">CodeSage</span>
+            </a>
         </div>
-        <nav>
-            <a href="#hero">Home</a>
-            <a href="#how-it-works">How it Works</a>
-            <a href="#features">Features</a>
-            <a href="#developer-dna">Developer DNA</a>
-            <a href="#faq">FAQ</a>
+
+        <nav class="nav-center-links" id="nav-center-links">
+            <a href="#machine" class="nav-item">Product</a>
+            <a href="#process" class="nav-item">How It Works</a>
+            <a href="#developer-dna" class="nav-item">About</a>
         </nav>
-        <div class="actions">
-            <a href="https://github.com/shreyanshhbharti" target="_blank" rel="noopener noreferrer">GitHub</a>
-            <a href="#cta" class="header-btn">Get Started</a>
+
+        <div class="nav-right-actions">
+            <a href="https://github.com/shreyanshhbharti" target="_blank" rel="noopener noreferrer" class="nav-github-link" aria-label="GitHub Repository">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+                </svg>
+                <span>GitHub</span>
+            </a>
+            <a href="dashboard.html" class="nav-primary-cta">
+                <span>Start Learning</span>
+                <span class="btn-arrow">→</span>
+            </a>
+            <button class="nav-mobile-toggle" id="nav-mobile-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div class="mobile-drawer-menu" id="mobile-drawer-menu">
+            <a href="#machine" class="drawer-link">Product</a>
+            <a href="#process" class="drawer-link">How It Works</a>
+            <a href="#developer-dna" class="drawer-link">About</a>
+            <a href="https://github.com/shreyanshhbharti" target="_blank" rel="noopener noreferrer" class="drawer-link">GitHub ↗</a>
+            <a href="dashboard.html" class="drawer-cta">Start Learning →</a>
         </div>
     </header>
 
-    <main>
-
-        
-        <!--    Hero Section     -->
-
-
-        <section id="hero">
-            <p class="badge">AI Programming Mentor</p>
-            <h1>
-                Learn Programming.<br/>
-                <span>Don't Just Generate Code.</span>
-            </h1>
-            <p>CodeSage analyzes your code, identifies where you're stuck, and guides you toward the solution — without solving the problem for you.</p>
-            
-            <div class="hero-buttons">
-                <a href="#cta" id="primary-btn">Start Learning</a>
-                <a href="#how-it-works" id="secondary-btn">See How It Works</a>
+    <main id="main-content">
+        <!-- ========================================== -->
+        <!-- 2. Editorial Hero Section                  -->
+        <!-- ========================================== -->
+        <section id="hero" class="hero-editorial-section">
+            <!-- Subtle Handcrafted Annotations -->
+            <div class="hero-aside-note" aria-hidden="true">
+                <span class="note-line">YOUR CODE</span>
+                <span class="note-sep">/</span>
+                <span class="note-line">YOUR ATTEMPT</span>
+                <span class="note-sep">/</span>
+                <span class="note-accent">YOUR GROWTH</span>
             </div>
 
-            <!-- Small feature highlights row -->
-            <div class="hero-highlights">
-                <span>✓ Hint-first guidance</span>
-                <span>✓ Personalized feedback</span>
-                <span>✓ Progress tracking</span>
+            <div class="hero-aside-stamp" aria-hidden="true">
+                <span class="stamp-bracket">[</span>
+                <span class="stamp-text">THINK • ATTEMPT • UNDERSTAND</span>
+                <span class="stamp-bracket">]</span>
+            </div>
+
+            <div class="container hero-inner">
+                <div class="hero-chapter-tag scroll-reveal">
+                    <span>00 / COGNITIVE PROGRAMMING MENTOR</span>
+                </div>
+
+                <h1 class="hero-headline scroll-reveal">
+                    <span class="hl-ink">Don't just get</span><br>
+                    <span class="hl-serif-green">the answer.</span><br>
+                    <span class="hl-ink">Learn how to</span><br>
+                    <span class="hl-serif-terracotta">find it.</span>
+                </h1>
+
+                <p class="hero-lead-text scroll-reveal">
+                    An AI programming mentor that analyzes your code, guides your thinking, and helps you become a better programmer — without solving everything for you.
+                </p>
+
+                <div class="hero-action-row scroll-reveal">
+                    <a href="dashboard.html" class="btn-primary-action">
+                        <span>Start Learning</span>
+                        <span class="action-arrow">→</span>
+                    </a>
+                    <a href="#machine" class="btn-text-action">
+                        <span>Explore the Machine</span>
+                        <span class="down-arrow">↓</span>
+                    </a>
+                </div>
             </div>
         </section>
 
         <!-- ========================================== -->
-        <!-- Product Preview (UI Mockup)                -->
+        <!-- 3. The Retro Computer Product Experience   -->
         <!-- ========================================== -->
-        <section id="preview">
-            <div class="preview-window">
-                <!-- Preview Top Bar -->
-                <div class="preview-header">
-                    <div class="preview-title">
-                        <span class="preview-dot dot-red"></span>
-                        <span class="preview-dot dot-yellow"></span>
-                        <span class="preview-dot dot-green"></span>
-                        <span class="preview-app-name">CodeSage Workspace</span>
+        <section id="machine" class="codesage-machine-section" aria-label="CodeSage Retro Computer Product Experience">
+            
+            <!-- Sticky Viewport Container -->
+            <div class="machine-sticky-viewport" id="machine-sticky-viewport">
+                
+                <!-- Real Desk Environment Horizon Plane (Upper Wall Backdrop & Lower Desk Surface) -->
+                <div class="desk-horizon-plane" aria-hidden="true">
+                    <div class="desk-wall-backdrop" id="desk-wall"></div>
+                    <div class="desk-surface-plane" id="desk-surface">
+                        <div class="desk-seam-edge"></div>
                     </div>
-                    <div class="preview-tag">JavaScript <span class="status-indicator">●</span></div>
+                </div>
+                
+                <!-- Dynamic Editorial Scroll Story Chapter Navigation & Caption -->
+                <div class="machine-story-stage" aria-label="Workstation Story Progression">
+                    <div class="machine-story-markers" role="tablist">
+                        <button class="story-chapter-btn story-marker-pill active" role="tab" aria-selected="true" data-step="1">
+                            <span class="step-num">01</span>
+                            <span class="step-label">Meet Your Mentor</span>
+                        </button>
+                        <button class="story-chapter-btn story-marker-pill" role="tab" aria-selected="false" data-step="2">
+                            <span class="step-num">02</span>
+                            <span class="step-label">Write Your Attempt</span>
+                        </button>
+                        <button class="story-chapter-btn story-marker-pill" role="tab" aria-selected="false" data-step="3">
+                            <span class="step-num">03</span>
+                            <span class="step-label">Socratic Hinting</span>
+                        </button>
+                        <button class="story-chapter-btn story-marker-pill" role="tab" aria-selected="false" data-step="4">
+                            <span class="step-num">04</span>
+                            <span class="step-label">Permanent Mastery</span>
+                        </button>
+                    </div>
+                    <div class="machine-story-caption" id="machine-story-caption" aria-live="polite">
+                        <span class="caption-title" id="caption-title">01 / MEET YOUR MENTOR</span>
+                        <span class="caption-sep">—</span>
+                        <span class="caption-desc" id="caption-desc">A programming mentor that teaches you how to think, not what to type.</span>
+                    </div>
                 </div>
 
-                <!-- Preview Two-Column Workspace -->
-                <div class="preview-body">
-                    <!-- Left Panel: User's Code -->
-                    <div class="preview-code-panel">
-                        <div class="panel-header">
-                            <span class="panel-label">Your Code</span>
-                            <span class="file-name">solution.js</span>
+                <!-- Surrounding Physical Desk Artifacts Grounded on Desk Plane -->
+                <div class="desk-environment-layer" id="desk-environment" aria-hidden="true">
+                    <!-- Ceramic Coffee Mug (Physically Placed in Foreground on Desk) -->
+                    <div class="desk-mug" id="desk-mug" title="CodeSage Dark Roast">
+                        <div class="mug-shadow"></div>
+                        <div class="mug-vessel">
+                            <div class="mug-top-ellipse">
+                                <div class="mug-coffee-surface"></div>
+                            </div>
+                            <div class="mug-side-cylinder">
+                                <span class="mug-brand-glyph">
+                                    <svg viewBox="0 0 120 120" width="14" height="14" fill="currentColor">
+                                        <path d="M 30 10 H 85 V 40 H 45 V 70 H 10 V 30 Z" />
+                                        <path d="M 90 110 H 35 V 80 H 75 V 50 H 110 V 90 Z" />
+                                    </svg>
+                                </span>
+                            </div>
+                            <div class="mug-handle-curve"></div>
                         </div>
-                        <pre class="code-block"><code><span class="code-keyword">function</span> <span class="code-function">twoSum</span>(nums, target) {
-    <span class="code-comment">// Your current approach</span>
-    <span class="code-keyword">for</span> (<span class="code-keyword">let</span> i = 0; i &lt; nums.length; i++) {
-        <span class="code-keyword">for</span> (<span class="code-keyword">let</span> j = i + 1; j &lt; nums.length; j++) {
-            <span class="code-keyword">if</span> (nums[i] + nums[j] === target) {
-                <span class="code-keyword">return</span> [i, j];
+                    </div>
+
+                    <!-- Coiled Black Cable on Desk -->
+                    <div class="desk-cable-wrap" id="desk-cable">
+                        <svg class="desk-cable-svg" viewBox="0 0 320 90" fill="none">
+                            <path d="M 10 80 C 60 85, 110 35, 160 45 C 210 55, 250 85, 310 65" stroke="#3D372F" stroke-width="5" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Physical Retro Computer Rig -->
+                <div class="retro-computer-rig" id="retro-computer-rig">
+                    
+                    <!-- Multi-Layered Physical Desk Cast Shadow -->
+                    <div class="monitor-desk-shadow" id="monitor-shadow" aria-hidden="true"></div>
+
+                    <!-- 3D CRT Monitor Chassis -->
+                    <div class="crt-monitor-chassis">
+                        <!-- Right Side 3D Housing Extrusion with Louvers (Visible Chassis Depth) -->
+                        <div class="crt-depth-side" aria-hidden="true">
+                            <div class="depth-side-louvers">
+                                <span></span><span></span><span></span><span></span><span></span>
+                                <span></span><span></span><span></span><span></span><span></span>
+                            </div>
+                        </div>
+
+                        <!-- Top 3D Taper Bevel with Heat Recess -->
+                        <div class="crt-depth-top" aria-hidden="true">
+                            <div class="top-vent-recess">
+                                <span></span><span></span><span></span><span></span>
+                            </div>
+                        </div>
+
+                        <!-- Sticky Notes Taped Directly to Bezel (Like bryangarage reference) -->
+                        <!-- Top-Left Note -->
+                        <div class="bezel-sticky-note note-top-left" aria-hidden="true">
+                            <div class="tape-strip"></div>
+                            <span class="sticky-rule-tag">RULE #1</span>
+                            <p class="sticky-text">"Don't just copy the answer. Understand why it works."</p>
+                            <span class="sticky-sub-tag">HINT ≠ ANSWER</span>
+                        </div>
+
+                        <!-- Lower-Left Note -->
+                        <div class="bezel-sticky-note note-bottom-left" aria-hidden="true">
+                            <span class="sticky-small-text">wait, do these stay up?</span>
+                        </div>
+
+                        <!-- Right Bezel Sticky Cluster -->
+                        <div class="bezel-sticky-cluster" aria-hidden="true">
+                            <div class="bezel-sticky-note note-right-mint">
+                                <div class="tape-strip"></div>
+                                <span class="sticky-rule-tag">BIG-O CHECK</span>
+                                <p class="sticky-code">Nested loops: O(n²)<br>Hash Map: O(n)</p>
+                                <span class="sticky-sub-tag">THINK FIRST</span>
+                            </div>
+                            <div class="bezel-sticky-note note-right-yellow">
+                                <span class="sticky-mini-tag">coffee first ☕</span>
+                            </div>
+                        </div>
+
+                        <!-- Front Bezel Housing -->
+                        <div class="crt-front-bezel">
+                            <!-- Inset Screen Well & Curved CRT Glass Tube -->
+                            <div class="crt-screen-bezel-recess">
+                                <div class="crt-glass-tube crt-screen-housing">
+                                    <!-- Optical CRT Overlays (Non-obstructive) -->
+                                    <div class="crt-reflection-glare" aria-hidden="true"></div>
+                                    <div class="crt-scanline-raster" aria-hidden="true"></div>
+                                    <div class="crt-vignette-frame" aria-hidden="true"></div>
+
+                                    <!-- Actual CodeSage Interactive Viewport -->
+                                    <div class="crt-interactive-viewport" id="product-workspace">
+                                        <!-- Classic Workstation OS Header Bar -->
+                                        <div class="workstation-os-bar">
+                                            <div class="os-menu-group">
+                                                <span class="os-sys-bullet">●</span>
+                                                <span class="os-menu-item active-menu">CodeSage OS</span>
+                                                <span class="os-menu-item">Diagnostics</span>
+                                                <span class="os-menu-item">Inspect</span>
+                                            </div>
+
+                                            <div class="os-problem-picker">
+                                                <label for="preview-problem-dropdown" class="os-picker-label">PROBLEM:</label>
+                                                <select id="preview-problem-dropdown" class="os-dropdown" aria-label="Select Problem">
+                                                    <option value="twosum">Two Sum (Arrays &amp; Map)</option>
+                                                    <option value="parentheses">Valid Parentheses (Stack)</option>
+                                                    <option value="binarysearch">Binary Search (Boundary)</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="os-status-pill">
+                                                <span class="os-indicator-light"></span>
+                                                <span>ONLINE</span>
+                                            </div>
+                                        </div>
+
+                                        <!-- Split Workspace Core -->
+                                        <div class="app-workspace-split">
+                                            <!-- Left Pane: Code Editor -->
+                                            <div class="app-editor-pane">
+                                                <div class="pane-tab-strip">
+                                                    <div class="file-tab">
+                                                        <span class="tab-bullet"></span>
+                                                        <span id="preview-file-name">solution.js</span>
+                                                    </div>
+                                                    <span class="lang-tag" id="preview-lang-tag">JavaScript ES6</span>
+                                                </div>
+
+                                                <div class="editor-code-body">
+                                                    <div class="code-line-numbers" aria-hidden="true">
+                                                        <span>01</span><span>02</span><span>03</span><span>04</span><span>05</span><span>06</span><span>07</span><span>08</span><span>09</span><span>10</span><span>11</span>
+                                                    </div>
+                                                    <pre class="code-pre-element"><code id="preview-code-content"><span class="c-kw">function</span> <span class="c-fn">twoSum</span>(nums, target) {
+    <span class="c-cm">// Brute force attempt: nested comparison</span>
+    <span class="c-kw">for</span> (<span class="c-kw">let</span> i = 0; i &lt; nums.length; i++) {
+        <span class="c-kw">for</span> (<span class="c-kw">let</span> j = i + 1; j &lt; nums.length; j++) {
+            <span class="c-warn-line"><span class="c-kw">if</span> (nums[i] + nums[j] === target) {</span>
+                <span class="c-kw">return</span> [i, j];
             }
         }
     }
+    <span class="c-kw">return</span> [];
 }</code></pre>
+                                                </div>
+
+                                                <div class="editor-status-strip">
+                                                    <div class="status-warning">
+                                                        <span class="warn-glyph">⚠</span>
+                                                        <span id="preview-editor-warn">O(n²) Time Complexity Detected</span>
+                                                    </div>
+                                                    <div class="status-meta">UTF-8 • Spaces: 4</div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Right Pane: Mentor Guidance -->
+                                            <div class="app-mentor-pane">
+                                                <div class="mentor-pane-header">
+                                                    <div class="mentor-id-group">
+                                                        <span class="mentor-monogram" aria-hidden="true">
+                                                            <svg viewBox="0 0 120 120" width="18" height="18" fill="currentColor">
+                                                                <path d="M 30 10 H 85 V 40 H 45 V 70 H 10 V 30 Z" />
+                                                                <path d="M 90 110 H 35 V 80 H 75 V 50 H 110 V 90 Z" />
+                                                            </svg>
+                                                        </span>
+                                                        <div>
+                                                            <span class="mentor-title">CodeSage Mentor</span>
+                                                            <span class="mentor-caption">Cognitive Diagnostic</span>
+                                                        </div>
+                                                    </div>
+                                                    <span class="tier-indicator" id="preview-hint-badge">Hint 1 of 3</span>
+                                                </div>
+
+                                                <div class="mentor-body-content">
+                                                    <div class="mentor-observation-card">
+                                                        <span class="obs-header">OBSERVATION</span>
+                                                        <p id="preview-obs-text">
+                                                            Your solution correctly finds matching pairs, but the nested loop scans the array repeatedly. Can we look up the needed difference faster?
+                                                        </p>
+                                                    </div>
+
+                                                    <div class="mentor-guidance-card" id="preview-hint-box">
+                                                        <div class="guidance-header">
+                                                            <span class="guidance-num" id="preview-hint-num">💡 Progressive Hint #1</span>
+                                                            <span class="guidance-tier">Conceptual</span>
+                                                        </div>
+                                                        <p class="guidance-text" id="preview-hint-text">
+                                                            Instead of checking all pairs, what data structure lets you check whether the complement <code class="inline-code">target - nums[i]</code> already exists in <span class="highlight-code">O(1)</span> time?
+                                                        </p>
+                                                    </div>
+
+                                                    <div class="guidance-stepper-dashes" id="preview-hint-stepper">
+                                                        <span class="dash-seg active" data-step="1"></span>
+                                                        <span class="dash-seg" data-step="2"></span>
+                                                        <span class="dash-seg" data-step="3"></span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="mentor-pane-footer">
+                                                    <button class="btn-hint-stepper" id="preview-next-hint-btn">
+                                                        <span id="preview-btn-text">Reveal Next Hint (2/3)</span>
+                                                        <span class="btn-arrow">→</span>
+                                                    </button>
+                                                    <a href="dashboard.html" class="link-open-workspace">
+                                                        <span>Try in Dashboard</span>
+                                                        <span>↗</span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Bottom App Metrics -->
+                                        <div class="app-bottom-metrics">
+                                            <div class="metric-item"><span class="m-label">Pattern:</span> <strong id="preview-metric-pattern">Hash Map Complement</strong></div>
+                                            <div class="metric-item"><span class="m-label">Retention:</span> <strong>84%</strong></div>
+                                            <div class="metric-item highlight-metric"><span class="m-label">Target:</span> <strong>O(n) Time</strong></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Lower Bezel Face: Floppy Drive, Badges & Controls -->
+                            <div class="crt-lower-control-strip">
+                                <div class="bezel-brand-plaque">
+                                    <span class="bezel-mark" aria-hidden="true">
+                                        <svg viewBox="0 0 120 120" width="16" height="16" fill="currentColor">
+                                            <path d="M 30 10 H 85 V 40 H 45 V 70 H 10 V 30 Z" />
+                                            <path d="M 90 110 H 35 V 80 H 75 V 50 H 110 V 90 Z" />
+                                        </svg>
+                                    </span>
+                                    <span class="bezel-title">CodeSage</span>
+                                    <span class="bezel-model-code">CS-9800 // MENTOR</span>
+                                </div>
+
+                                <!-- Floppy Drive Assembly (Authentic Retro Detail) -->
+                                <div class="floppy-drive-assembly" aria-hidden="true" title="3.5-inch Floppy Drive">
+                                    <div class="floppy-slot-gate">
+                                        <div class="slot-shadow-line"></div>
+                                    </div>
+                                    <div class="floppy-eject-btn"></div>
+                                    <div class="floppy-activity-led"></div>
+                                </div>
+
+                                <!-- Tactile Dials & Power Rocker Switch -->
+                                <div class="bezel-tactile-controls">
+                                    <div class="tactile-dial" title="CRT Focus"></div>
+                                    <div class="tactile-dial" title="CRT Brightness"></div>
+                                    <div class="power-assembly">
+                                        <span class="crt-power-led" id="crt-power-led" title="Power Status"></span>
+                                        <button class="bezel-power-rocker" id="crt-power-btn" title="Toggle CRT Power" aria-label="Toggle Power"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Heavy Swivel Pedestal Base (Connects Monitor to Desk) -->
+                        <div class="crt-pedestal-stand" aria-hidden="true">
+                            <div class="pedestal-ball-joint"></div>
+                            <div class="pedestal-flared-base"></div>
+                        </div>
                     </div>
 
-                    <!-- Right Panel: Mentor Guidance -->
-                    <div class="preview-mentor-panel">
-                        <div class="panel-header">
-                            <span class="panel-label">CodeSage</span>
-                            <span class="mentor-status">Active Mentor</span>
+                    <!-- Separate Retro Mechanical Keyboard in Foreground -->
+                    <div class="retro-keyboard-rig retro-keyboard-chassis" id="retro-keyboard">
+                        <div class="keyboard-desk-shadow" aria-hidden="true"></div>
+                        <div class="keyboard-angled-body">
+                            <div class="kb-keycap-tray">
+                                <div class="kb-key-row fn-row">
+                                    <span class="key key-esc">ESC</span>
+                                    <span class="key-spacer"></span>
+                                    <span class="key">F1</span><span class="key">F2</span><span class="key">F3</span><span class="key">F4</span>
+                                    <span class="key-spacer"></span>
+                                    <span class="key">F5</span><span class="key">F6</span><span class="key">F7</span><span class="key">F8</span>
+                                    <span class="key-spacer"></span>
+                                    <span class="key key-sage">SAGE</span>
+                                </div>
+                                <div class="kb-key-row">
+                                    <span class="key key-accent">~</span>
+                                    <span class="key">1</span><span class="key">2</span><span class="key">3</span><span class="key">4</span><span class="key">5</span><span class="key">6</span><span class="key">7</span><span class="key">8</span><span class="key">9</span><span class="key">0</span><span class="key">-</span><span class="key">=</span>
+                                    <span class="key key-backspace">BKSP</span>
+                                </div>
+                                <div class="kb-key-row">
+                                    <span class="key key-tab">TAB</span>
+                                    <span class="key">Q</span><span class="key">W</span><span class="key">E</span><span class="key">R</span><span class="key">T</span><span class="key">Y</span><span class="key">U</span><span class="key">I</span><span class="key">O</span><span class="key">P</span><span class="key">[</span><span class="key">]</span><span class="key">\</span>
+                                </div>
+                                <div class="kb-key-row">
+                                    <span class="key key-caps">CAPS</span>
+                                    <span class="key">A</span><span class="key">S</span><span class="key">D</span><span class="key">F</span><span class="key">G</span><span class="key">H</span><span class="key">J</span><span class="key">K</span><span class="key">L</span><span class="key">;</span><span class="key">'</span>
+                                    <span class="key key-return">RETURN</span>
+                                </div>
+                                <div class="kb-key-row">
+                                    <span class="key key-shift-l">SHIFT</span>
+                                    <span class="key">Z</span><span class="key">X</span><span class="key">C</span><span class="key">V</span><span class="key">B</span><span class="key">N</span><span class="key">M</span><span class="key">,</span><span class="key">.</span><span class="key">/</span>
+                                    <span class="key key-shift-r">SHIFT</span>
+                                </div>
+                                <div class="kb-key-row kb-space-row">
+                                    <span class="key key-mod">CTRL</span>
+                                    <span class="key key-mod">ALT</span>
+                                    <span class="key key-space"></span>
+                                    <span class="key key-mod">ALT</span>
+                                    <span class="key key-mod">CTRL</span>
+                                </div>
+                            </div>
+                            <div class="kb-front-lip"></div>
                         </div>
-                        <div class="hint-card">
-                            <div class="hint-badge">💡 Hint #1</div>
-                            <p class="hint-text">Your approach looks close.</p>
-                            <p class="hint-detail">Think about what happens when two values repeat. Can you avoid nested loops with a hash map?</p>
-                            <span class="hint-action-tag">Try Again</span>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- 4. "The Problem" Editorial Statement       -->
+        <!-- ========================================== -->
+        <section id="story" class="section section-problem">
+            <div class="container statement-wrap">
+                <div class="chapter-marker scroll-reveal">01 / THE PROBLEM</div>
+                
+                <h2 class="editorial-statement-title scroll-reveal">
+                    Most AI tools<br>
+                    <span class="st-muted">solve the problem.</span><br>
+                    <span class="st-serif-green">You still have to</span><br>
+                    <span class="st-serif-terracotta">learn from it.</span>
+                </h2>
+
+                <p class="editorial-statement-sub scroll-reveal">
+                    Traditional AI coding assistants are built for speed and instant generation. CodeSage changes the process — engineering permanent cognitive retention, reasoning, and real problem-solving instincts.
+                </p>
+
+                <!-- Clean Side-by-Side Pipeline -->
+                <div class="editorial-pipeline-grid scroll-reveal">
+                    <div class="pipeline-card trad-card">
+                        <div class="pipeline-header">
+                            <span class="tag-clean">TRADITIONAL AI</span>
+                            <h3>Instant Code Dump</h3>
+                        </div>
+                        <div class="pipeline-flow">
+                            <div class="flow-row"><span class="row-num">1</span> <span>Problem Statement</span></div>
+                            <div class="flow-sep">↓</div>
+                            <div class="flow-row"><span class="row-num">2</span> <span>Instant Full Code Dump</span></div>
+                            <div class="flow-sep">↓</div>
+                            <div class="flow-row"><span class="row-num">3</span> <span>Copy &amp; Paste</span></div>
+                            <div class="flow-sep">↓</div>
+                            <div class="flow-row row-fail"><span class="row-glyph">✕</span> <span>Zero Intuition Retained</span></div>
+                        </div>
+                    </div>
+
+                    <div class="pipeline-card sage-card">
+                        <div class="pipeline-header">
+                            <span class="tag-clean tag-sage">CODESAGE MENTOR</span>
+                            <h3>Socratic Learning Loop</h3>
+                        </div>
+                        <div class="pipeline-flow">
+                            <div class="flow-row"><span class="row-num sage-num">1</span> <span>Your Initial Attempt</span></div>
+                            <div class="flow-sep sage-sep">↓</div>
+                            <div class="flow-row"><span class="row-num sage-num">2</span> <span>AST Logic &amp; Bottleneck Analysis</span></div>
+                            <div class="flow-sep sage-sep">↓</div>
+                            <div class="flow-row"><span class="row-num sage-num">3</span> <span>Calibrated Progressive Hints</span></div>
+                            <div class="flow-sep sage-sep">↓</div>
+                            <div class="flow-row row-success"><span class="row-glyph">✓</span> <span>Permanent Mastery &amp; DNA Profile</span></div>
                         </div>
                     </div>
                 </div>
-
-                <!-- Preview Bottom Status Bar -->
-                <div class="preview-footer">
-                    <span>Attempt 3</span>
-                    <span class="divider">•</span>
-                    <span>Hint 1/3</span>
-                    <span class="divider">•</span>
-                    <span>72% mastery</span>
-                </div>
-            </div>
-        </section>
-
-       <!-- Technology Bar -->
-
-        
-        <section id="technologies">
-            <div>
-                <span>HTML</span>
-                <span>CSS</span>
-                <span>JavaScript</span>
-                <span>Python</span>
-                <span>C++</span>
-                <span>Git</span>
-                <span>FastAPI</span>
-                <span>Gemini AI</span>
             </div>
         </section>
 
         <!-- ========================================== -->
-        <!-- Problem Section                            -->
+        <!-- 5. CodeSage Process (Sticky Storytelling)  -->
         <!-- ========================================== -->
-        <section id="problem">
-            <div class="section-heading">
-                <h2>AI can write your code.<br/><span>But can it teach you?</span></h2>
-                <p>Getting the answer is easy. Building the ability to find the answer yourself is harder.</p>
-            </div>
-
-            <div class="problem-grid">
-                <article class="problem-card">
-                    <div class="problem-icon">⚡</div>
-                    <h3>1. Instant Answers</h3>
-                    <p>AI can solve your problem before you understand why the solution works.</p>
-                </article>
-
-                <article class="problem-card">
-                    <div class="problem-icon">🔄</div>
-                    <h3>2. Repeated Mistakes</h3>
-                    <p>Fixing one bug doesn't help if you keep making the same mistake.</p>
-                </article>
-
-                <article class="problem-card">
-                    <div class="problem-icon">📉</div>
-                    <h3>3. No Learning Memory</h3>
-                    <p>Most coding assistants don't track what you struggle with over time.</p>
-                </article>
-            </div>
-        </section>
-
-        <!-- ========================================== -->
-        <!-- How It Works Section                       -->
-        <!-- ========================================== -->
-        <section id="how-it-works">
-            <div class="section-heading">
-                <h2>Learn by Solving, Not Copying</h2>
-                <p>A step-by-step approach built to grow real developer intuition.</p>
-            </div>
-
-            <div class="steps-container">
-                <div class="step-card">
-                    <div class="step-number">01</div>
-                    <h3>Think</h3>
-                    <p>Explain your approach before getting help.</p>
+        <section id="process" class="section section-process">
+            <div class="container process-layout-grid">
+                <!-- Left Sticky Column -->
+                <div class="process-sticky-left">
+                    <div class="chapter-marker">02 / THE PROCESS</div>
+                    <h2 class="sticky-headline">
+                        Learn Through<br>
+                        <span class="hl-serif-green">the Process.</span>
+                    </h2>
+                    <p class="sticky-description">
+                        A continuous 5-stage cognitive cycle engineered to guide independent problem-solving intuition.
+                    </p>
+                    <div class="sticky-counter">
+                        <span id="active-step-text">01 / 05 — ATTEMPT</span>
+                    </div>
                 </div>
 
-                <div class="step-card">
-                    <div class="step-number">02</div>
-                    <h3>Code</h3>
-                    <p>Write your own solution.</p>
-                </div>
-
-                <div class="step-card">
-                    <div class="step-number">03</div>
-                    <h3>Get a Hint</h3>
-                    <p>CodeSage identifies where you're stuck.</p>
-                </div>
-
-                <div class="step-card">
-                    <div class="step-number">04</div>
-                    <h3>Retry</h3>
-                    <p>Use the guidance and try again.</p>
-                </div>
-
-                <div class="step-card">
-                    <div class="step-number">05</div>
-                    <h3>Grow</h3>
-                    <p>Your mistakes and progress become part of your learning profile.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- ========================================== -->
-        <!-- Features Section                           -->
-        <!-- ========================================== -->
-        <section id="features">
-            <div class="section-heading">
-                <h2>Engineered for Understanding</h2>
-                <p>Tools built to enhance your cognitive process, not bypass it.</p>
-            </div>
-
-            <div class="feature-grid">
-                <article>
-                    <div class="feature-icon">💡</div>
-                    <h3>1. Progressive Hints</h3>
-                    <p>Get just enough guidance to move forward instead of receiving the answer immediately.</p>
-                </article>
-
-                <article>
-                    <div class="feature-icon">🧠</div>
-                    <h3>2. Mistake Memory</h3>
-                    <p>CodeSage remembers recurring mistakes and weak concepts so you can improve them.</p>
-                </article>
-
-                <article>
-                    <div class="feature-icon">🧬</div>
-                    <h3>3. Developer DNA</h3>
-                    <p>Build a personal profile of your programming strengths, weaknesses, and habits.</p>
-                </article>
-
-                <article>
-                    <div class="feature-icon">💬</div>
-                    <h3>4. Interview Mode</h3>
-                    <p>Practice explaining algorithms, complexity, edge cases, and trade-offs.</p>
-                </article>
-
-                <article>
-                    <div class="feature-icon">📊</div>
-                    <h3>5. Complexity Analysis</h3>
-                    <p>Understand the time and space complexity of your solutions.</p>
-                </article>
-
-                <article>
-                    <div class="feature-icon">📈</div>
-                    <h3>6. Learning Timeline</h3>
-                    <p>See how your programming skills and understanding improve over time.</p>
-                </article>
-            </div>
-        </section>
-
-        <!-- ========================================== -->
-        <!-- Developer DNA Section (UI Mockup)          -->
-        <!-- ========================================== -->
-        <section id="developer-dna">
-            <div class="section-heading">
-                <h2>Your Developer DNA</h2>
-                <p>CodeSage builds a picture of how you program — what you're good at, where you struggle, and what you should work on next.</p>
-            </div>
-
-            <div class="dna-container">
-                <div class="dna-card">
-                    <div class="dna-header">
-                        <h3>Developer DNA</h3>
-                        <span class="dna-badge">Learning Profile</span>
+                <!-- Right Scrollable Stages -->
+                <div class="process-scroll-right">
+                    <!-- Stage 1 -->
+                    <div class="process-stage-card active" data-stage="1">
+                        <div class="stage-top-meta">
+                            <span class="stage-tag">STAGE 01</span>
+                            <span class="stage-title">ATTEMPT</span>
+                        </div>
+                        <p class="stage-text">Write your solution first. Articulate your algorithmic reasoning and edge-case assumptions before seeking help.</p>
+                        <div class="stage-code-snippet">
+                            <span class="snippet-label">Active Editor</span>
+                            <code>const twoSum = (nums, target) => { /* Your initial logic */ }</code>
+                        </div>
                     </div>
 
-                    <!-- Skill Progress Bars -->
-                    <div class="dna-skills">
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span>Algorithms</span>
-                                <span class="skill-pct">82%</span>
-                            </div>
-                            <div class="progress-bar">
-                                <div class="progress-fill" style="width: 82%;"></div>
+                    <!-- Stage 2 -->
+                    <div class="process-stage-card" data-stage="2">
+                        <div class="stage-top-meta">
+                            <span class="stage-tag">STAGE 02</span>
+                            <span class="stage-title">ANALYZE</span>
+                        </div>
+                        <p class="stage-text">CodeSage examines your approach, algorithmic Big-O complexity, boundary checks, and logical misconceptions.</p>
+                        <div class="stage-code-snippet">
+                            <span class="snippet-label">Diagnostic</span>
+                            <span class="snippet-warn">⚠ O(n²) Bottleneck: Nested linear scan detected in loop boundary.</span>
+                        </div>
+                    </div>
+
+                    <!-- Stage 3 -->
+                    <div class="process-stage-card" data-stage="3">
+                        <div class="stage-top-meta">
+                            <span class="stage-tag">STAGE 03</span>
+                            <span class="stage-title">HINT</span>
+                        </div>
+                        <p class="stage-text">Get calibrated Socratic guidance that nudges your thinking forward without spoiling the solution.</p>
+                        <div class="stage-code-snippet">
+                            <span class="snippet-label">Tier 1 Hint</span>
+                            <span class="snippet-hint">"What data structure provides O(1) complement lookup?"</span>
+                        </div>
+                    </div>
+
+                    <!-- Stage 4 -->
+                    <div class="process-stage-card" data-stage="4">
+                        <div class="stage-top-meta">
+                            <span class="stage-tag">STAGE 04</span>
+                            <span class="stage-title">RETRY</span>
+                        </div>
+                        <p class="stage-text">Apply the hint, revise your data structures, refactor your loop bounds, and test your new implementation.</p>
+                        <div class="stage-code-snippet">
+                            <span class="snippet-label">Revised Solution</span>
+                            <code>const map = new Map(); // Single-pass hash lookup</code>
+                        </div>
+                    </div>
+
+                    <!-- Stage 5 -->
+                    <div class="process-stage-card" data-stage="5">
+                        <div class="stage-top-meta">
+                            <span class="stage-tag">STAGE 05</span>
+                            <span class="stage-title">UNDERSTAND</span>
+                        </div>
+                        <p class="stage-text">Cement the mental model permanently. CodeSage updates your Developer DNA profile and tracks recurring patterns.</p>
+                        <div class="stage-code-snippet">
+                            <span class="snippet-label">DNA Profile Update</span>
+                            <span class="snippet-success">✓ Hash Map lookup pattern permanently reinforced.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- 6. Progressive Hints Visual Section        -->
+        <!-- ========================================== -->
+        <section id="hints" class="section section-hints">
+            <div class="container">
+                <div class="section-center-head scroll-reveal">
+                    <div class="chapter-marker">03 / PROGRESSIVE HINTS</div>
+                    <h2 class="editorial-section-title">
+                        Don't reveal the answer.<br>
+                        <span class="hl-serif-green">Reveal the next thought.</span>
+                    </h2>
+                    <p class="editorial-section-lead">
+                        Tiered hint reveals that respect your intellect and build genuine problem-solving stamina.
+                    </p>
+                </div>
+
+                <div class="hints-progression-stack scroll-reveal">
+                    <div class="hint-card-item">
+                        <div class="hint-meta-bar">
+                            <span class="hint-level">HINT 01</span>
+                            <span class="hint-type">CONCEPTUAL</span>
+                        </div>
+                        <h3 class="hint-quote">"Think about the loop condition."</h3>
+                        <p class="hint-desc">What is the condition controlling the termination of your linear scan, and what happens on the final iteration?</p>
+                    </div>
+
+                    <div class="hint-step-divider">↓</div>
+
+                    <div class="hint-card-item">
+                        <div class="hint-meta-bar">
+                            <span class="hint-level">HINT 02</span>
+                            <span class="hint-type">BOUNDARY ANALYSIS</span>
+                        </div>
+                        <h3 class="hint-quote">"What is the last valid index?"</h3>
+                        <p class="hint-desc">In a zero-indexed array of length <code>n</code>, accessing index <code>n</code> returns <code>undefined</code>.</p>
+                    </div>
+
+                    <div class="hint-step-divider">↓</div>
+
+                    <div class="hint-card-item">
+                        <div class="hint-meta-bar">
+                            <span class="hint-level">HINT 03</span>
+                            <span class="hint-type">SYNTACTIC NUDGE</span>
+                        </div>
+                        <h3 class="hint-quote">"Compare i &lt; arr.length with i &lt;= arr.length."</h3>
+                        <p class="hint-desc">Changing the inequality prevents the off-by-one boundary overflow without rewriting the core loop.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- 7. Mistake Memory Section                  -->
+        <!-- ========================================== -->
+        <section id="mistake-memory" class="section section-memory">
+            <div class="container">
+                <div class="section-center-head scroll-reveal">
+                    <div class="chapter-marker">COGNITIVE CONTINUITY</div>
+                    <h2 class="editorial-section-title">
+                        Your mistakes shouldn't disappear<br>
+                        <span class="hl-serif-terracotta">when you close the tab.</span>
+                    </h2>
+                    <p class="editorial-section-lead">
+                        CodeSage detects recurring blind spots across problems and alerts you before they become interview habits.
+                    </p>
+                </div>
+
+                <div class="memory-log-card scroll-reveal">
+                    <div class="log-card-header">
+                        <div class="header-left">
+                            <span class="log-symbol">🧠</span>
+                            <div>
+                                <h3>Mistake Memory Timeline</h3>
+                                <span class="log-caption">Observed Pattern History</span>
                             </div>
                         </div>
+                        <span class="badge-subtle">PROTOTYPE VISUALIZATION</span>
+                    </div>
 
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span>Debugging</span>
-                                <span class="skill-pct">68%</span>
+                    <div class="log-entries-list">
+                        <div class="log-entry">
+                            <span class="entry-date">SEPT 18</span>
+                            <div class="entry-body">
+                                <strong>Array Bounds Overflow</strong>
+                                <span>Indexed past valid length in Two Sum attempt</span>
                             </div>
-                            <div class="progress-bar">
-                                <div class="progress-fill" style="width: 68%;"></div>
-                            </div>
+                            <span class="entry-status">Detected</span>
                         </div>
 
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span>JavaScript</span>
-                                <span class="skill-pct">91%</span>
+                        <div class="log-entry">
+                            <span class="entry-date">SEPT 22</span>
+                            <div class="entry-body">
+                                <strong>Off-by-One Boundary Error</strong>
+                                <span>Single-element array edge case omitted in Binary Search</span>
                             </div>
-                            <div class="progress-bar">
-                                <div class="progress-fill" style="width: 91%;"></div>
-                            </div>
+                            <span class="entry-status">Detected</span>
                         </div>
 
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span>Recursion</span>
-                                <span class="skill-pct">47%</span>
+                        <div class="log-entry">
+                            <span class="entry-date">SEPT 27</span>
+                            <div class="entry-body">
+                                <strong>Missing Recursion Base Case</strong>
+                                <span>Unbounded stack growth on empty tree node</span>
                             </div>
-                            <div class="progress-bar">
-                                <div class="progress-fill" style="width: 47%;"></div>
-                            </div>
+                            <span class="entry-status">Detected</span>
                         </div>
 
-                        <div class="skill-item">
-                            <div class="skill-info">
+                        <div class="log-entry entry-flagged">
+                            <span class="entry-date">OCT 01</span>
+                            <div class="entry-body">
+                                <strong>Array Bounds Again</strong>
+                                <span>Recurring pattern flagged across 3 consecutive practice sessions</span>
+                            </div>
+                            <span class="entry-status status-alert">Recurring Pattern</span>
+                        </div>
+                    </div>
+
+                    <div class="log-card-footer">
+                        <span class="alert-glyph">⚡</span>
+                        <p><strong>Mentor Action:</strong> Targeted boundary-condition practice drills scheduled for next coding session.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- 8. ONE DRAMATIC DARK SECTION: DEVELOPER DNA-->
+        <!-- ========================================== -->
+        <section id="developer-dna" class="section section-dna-dark">
+            <div class="container">
+                <div class="dna-header-dark scroll-reveal">
+                    <div class="chapter-marker-dark">04 / DEVELOPER DNA</div>
+                    <h2 class="dna-headline-dark">
+                        Over time,<br>
+                        <span class="hl-serif-cream">CodeSage learns how you learn.</span>
+                    </h2>
+                    <p class="dna-lead-dark">
+                        Your coding instincts, strengths, and blind spots mapped into an evolving Developer DNA profile.
+                    </p>
+                </div>
+
+                <div class="dna-editorial-grid scroll-reveal">
+                    <!-- Left Column: Philosophy & Overview -->
+                    <div class="dna-col-narrative">
+                        <div class="narrative-tag">COGNITIVE BLUEPRINT</div>
+                        <h3 class="narrative-title">Your coding habits become a map of how you think.</h3>
+                        <p class="narrative-body">
+                            Unlike traditional coding platforms that only check whether your tests pass or fail, CodeSage builds a structural record of your thought process: which data structures you reach for first, where you hit logic deadlocks, and how quickly you self-correct.
+                        </p>
+
+                        <div class="dna-insight-capsule strong-capsule">
+                            <span class="capsule-label">STRONGEST AREAS</span>
+                            <strong>JavaScript • Arrays • Hash Maps</strong>
+                            <p>Consistently implements linear data structures with high confidence and minimal hint reliance.</p>
+                        </div>
+
+                        <div class="dna-insight-capsule weak-capsule">
+                            <span class="capsule-label">RECOMMENDED FOCUS</span>
+                            <strong>Recursion • Dynamic Programming</strong>
+                            <p>Tendency to skip base-case verification on multi-branch tree recursions.</p>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Skills Breakdown -->
+                    <div class="dna-col-metrics">
+                        <div class="metrics-top-bar">
+                            <span>COMPETENCY BREAKDOWN</span>
+                            <span class="tiny-proto">PROTOTYPE VISUALIZATION</span>
+                        </div>
+
+                        <div class="skill-meter-row">
+                            <div class="meter-info">
+                                <span>JavaScript &amp; Syntax</span>
+                                <span class="meter-pct">91%</span>
+                            </div>
+                            <div class="meter-track"><div class="meter-fill" style="width: 91%;"></div></div>
+                        </div>
+
+                        <div class="skill-meter-row">
+                            <div class="meter-info">
+                                <span>Algorithms &amp; Logic</span>
+                                <span class="meter-pct">82%</span>
+                            </div>
+                            <div class="meter-track"><div class="meter-fill" style="width: 82%;"></div></div>
+                        </div>
+
+                        <div class="skill-meter-row">
+                            <div class="meter-info">
+                                <span>Debugging &amp; Edge Cases</span>
+                                <span class="meter-pct">68%</span>
+                            </div>
+                            <div class="meter-track"><div class="meter-fill" style="width: 68%;"></div></div>
+                        </div>
+
+                        <div class="skill-meter-row">
+                            <div class="meter-info">
+                                <span>Recursion &amp; Trees</span>
+                                <span class="meter-pct pct-amber">47%</span>
+                            </div>
+                            <div class="meter-track"><div class="meter-fill fill-amber" style="width: 47%;"></div></div>
+                        </div>
+
+                        <div class="skill-meter-row">
+                            <div class="meter-info">
                                 <span>Dynamic Programming</span>
-                                <span class="skill-pct">38%</span>
+                                <span class="meter-pct pct-amber">38%</span>
                             </div>
-                            <div class="progress-bar">
-                                <div class="progress-fill" style="width: 38%;"></div>
-                            </div>
+                            <div class="meter-track"><div class="meter-fill fill-amber" style="width: 38%;"></div></div>
                         </div>
-                    </div>
 
-                    <!-- DNA Summary Insights -->
-                    <div class="dna-insights">
-                        <div class="insight-box insight-strong">
-                            <span class="insight-label">Strongest:</span>
-                            <p>Arrays &amp; JavaScript</p>
-                        </div>
-                        <div class="insight-box insight-weak">
-                            <span class="insight-label">Needs Work:</span>
-                            <p>Recursion &amp; Dynamic Programming</p>
+                        <div class="dna-pattern-callout">
+                            <span class="callout-tag">IDENTIFIED BEHAVIORAL PATTERN</span>
+                            <p>Prefers brute-force nested iterations before evaluating hash lookups or pointer boundaries.</p>
                         </div>
                     </div>
                 </div>
@@ -337,125 +834,222 @@
         </section>
 
         <!-- ========================================== -->
-        <!-- Comparison & CTA Section                   -->
+        <!-- 9. Big Typographic Interlude               -->
         <!-- ========================================== -->
-        <section id="compare-cta">
-            <div class="section-heading">
-                <h2>Why <span>CodeSage</span> is Different</h2>
-                <p>See why learning with guidance beats getting instant answers.</p>
-            </div>
-
-            <div class="compare-container">
-                <!-- Comparison Table -->
-                <div id="comparison">
-                    <table>
-                        <thead>
-                            <tr>    
-                                <th>Traditional AI</th>
-                                <th>CodeSage</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>❌ Gives answers</td>
-                                <td>✅ Gives hints</td>
-                            </tr>
-                            <tr>
-                                <td>❌ Solves problems</td>
-                                <td>✅ Teaches thinking</td>
-                            </tr>
-                            <tr>
-                                <td>❌ Temporary help</td>
-                                <td>✅ Long-term growth</td>
-                            </tr>
-                            <tr>
-                                <td>❌ Doesn't remember</td>
-                                <td>✅ Tracks progress</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <!-- Call to Action Card -->
-                <div id="cta">
-                    <h2>Ready to become a better developer?</h2>
-                    <p>Start building programming skills that stay with you.</p>
-                    <a href="#hero" class="cta-btn">Start Your Journey</a>
+        <section class="section section-interlude">
+            <div class="container text-center">
+                <div class="interlude-text-block scroll-reveal">
+                    <p class="interlude-line-1">
+                        Programming<br>
+                        isn't memorizing<br>
+                        solutions.
+                    </p>
+                    <p class="interlude-line-2">
+                        It's learning<br>
+                        <span class="hl-serif-terracotta">how to think.</span>
+                    </p>
                 </div>
             </div>
         </section>
 
         <!-- ========================================== -->
-        <!-- FAQ Section                                -->
+        <!-- 10. Split Comparison Section               -->
         <!-- ========================================== -->
-        <section id="faq">
-            <div class="section-heading">
-                <h2>Frequently Asked Questions</h2>
-                <p>Common questions about how CodeSage helps you learn.</p>
+        <section id="comparison" class="section section-comparison">
+            <div class="container">
+                <div class="section-center-head scroll-reveal">
+                    <div class="chapter-marker">05 / WHY CODESAGE</div>
+                    <h2 class="editorial-section-title">
+                        AI That Builds Programmers,<br>
+                        <span class="hl-serif-green">Not Just Programs.</span>
+                    </h2>
+                </div>
+
+                <div class="comparison-side-grid scroll-reveal">
+                    <div class="comp-pane trad-pane">
+                        <div class="comp-pane-top">
+                            <span class="tag-clean">TRADITIONAL AI</span>
+                            <h3>Code Generator</h3>
+                            <p>Optimized for instant copy-pasting</p>
+                        </div>
+                        <div class="comp-chain">
+                            <div class="chain-step">Question</div>
+                            <div class="chain-sep">↓</div>
+                            <div class="chain-step">Answer</div>
+                            <div class="chain-sep">↓</div>
+                            <div class="chain-step">Copy</div>
+                            <div class="chain-sep">↓</div>
+                            <div class="chain-step step-fail">Done (No learning history)</div>
+                        </div>
+                    </div>
+
+                    <div class="comp-pane sage-pane">
+                        <div class="comp-pane-top">
+                            <span class="tag-clean tag-sage">CODESAGE ARCHITECTURE</span>
+                            <h3>Programming Mentor</h3>
+                            <p>Optimized for lasting understanding</p>
+                        </div>
+                        <div class="comp-chain">
+                            <div class="chain-step sage-step">Problem</div>
+                            <div class="chain-sep sage-sep">↓</div>
+                            <div class="chain-step sage-step">Attempt</div>
+                            <div class="chain-sep sage-sep">↓</div>
+                            <div class="chain-step sage-step">Guidance &amp; Hints</div>
+                            <div class="chain-sep sage-sep">↓</div>
+                            <div class="chain-step sage-step">Retry &amp; Reflect</div>
+                            <div class="chain-sep sage-sep">↓</div>
+                            <div class="chain-step step-success">Deep Understanding &amp; Intuition</div>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </section>
 
-            <div class="faq-container">
-                <details class="faq-item" open>
-                    <summary>Does CodeSage give me the solution?</summary>
-                    <div class="faq-answer">
-                        <p>CodeSage uses progressive hints to help you solve problems yourself. The goal is understanding, not simply getting the answer.</p>
-                    </div>
-                </details>
+        <!-- ========================================== -->
+        <!-- 11. FAQ Editorial Section                  -->
+        <!-- ========================================== -->
+        <section id="faq" class="section section-faq">
+            <div class="container">
+                <div class="section-center-head scroll-reveal">
+                    <div class="chapter-marker">06 / FREQUENTLY ASKED QUESTIONS</div>
+                    <h2 class="editorial-section-title">Good questions.</h2>
+                    <p class="editorial-section-lead">
+                        Everything you need to know about how CodeSage guides your learning.
+                    </p>
+                </div>
 
-                <details class="faq-item">
-                    <summary>How is CodeSage different from ChatGPT?</summary>
-                    <div class="faq-answer">
-                        <p>CodeSage is designed around structured programming practice, hint-first guidance, mistake tracking, and long-term learning.</p>
-                    </div>
-                </details>
+                <div class="editorial-faq-stack scroll-reveal">
+                    <details class="faq-line-item" open>
+                        <summary class="faq-line-summary">
+                            <span>Does CodeSage give me the solution?</span>
+                            <span class="faq-cross">+</span>
+                        </summary>
+                        <div class="faq-line-body">
+                            <p>No. CodeSage uses progressive hints and Socratic questions to help you solve problems yourself. The goal is deep understanding and algorithmic intuition, not simply handing you code to copy.</p>
+                        </div>
+                    </details>
 
-                <details class="faq-item">
-                    <summary>Can I use CodeSage for DSA?</summary>
-                    <div class="faq-answer">
-                        <p>Yes. CodeSage is designed to help with algorithms, complexity, debugging, and programming problem solving.</p>
-                    </div>
-                </details>
+                    <details class="faq-line-item">
+                        <summary class="faq-line-summary">
+                            <span>How is CodeSage different from ChatGPT or GitHub Copilot?</span>
+                            <span class="faq-cross">+</span>
+                        </summary>
+                        <div class="faq-line-body">
+                            <p>While tools like Copilot and ChatGPT are designed to generate code for you, CodeSage is designed to teach you. It provides structured hint tiers, tracks your recurring mistakes over time, and builds your Developer DNA profile to help you pass technical interviews and write robust production systems.</p>
+                        </div>
+                    </details>
 
-                <details class="faq-item">
-                    <summary>What happens if I still can't solve the problem?</summary>
-                    <div class="faq-answer">
-                        <p>CodeSage can progressively increase the level of guidance instead of immediately revealing the solution.</p>
+                    <details class="faq-line-item">
+                        <summary class="faq-line-summary">
+                            <span>Can I use CodeSage for DSA and technical interview prep?</span>
+                            <span class="faq-cross">+</span>
+                        </summary>
+                        <div class="faq-line-body">
+                            <p>Yes. CodeSage is specifically optimized for Data Structures and Algorithms (DSA), time &amp; space complexity analysis, edge-case discovery, and simulated technical interview dialogues.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-line-item">
+                        <summary class="faq-line-summary">
+                            <span>What happens if I'm completely stuck?</span>
+                            <span class="faq-cross">+</span>
+                        </summary>
+                        <div class="faq-line-body">
+                            <p>CodeSage provides progressive guidance across multiple tiers: starting with conceptual questions, moving to data structure suggestions, and finally offering structural pseudocode snippets if you need an extra nudge — without spoiling the final implementation.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- 12. Final CTA Section                      -->
+        <!-- ========================================== -->
+        <section id="cta" class="section section-cta-final">
+            <div class="container text-center">
+                <div class="cta-inner-box scroll-reveal">
+                    <div class="chapter-marker">07 / START LEARNING</div>
+                    <h2 class="final-headline">
+                        Stop copying<br>
+                        <span class="hl-serif-green">solutions.</span><br>
+                        Start building<br>
+                        <span class="hl-serif-terracotta">understanding.</span>
+                    </h2>
+                    <p class="final-lead">
+                        CodeSage helps you become a better programmer, one problem at a time.
+                    </p>
+                    <div class="final-actions-cluster">
+                        <a href="dashboard.html" class="btn-primary-action">
+                            <span>Start Learning</span>
+                            <span class="action-arrow">→</span>
+                        </a>
+                        <a href="https://github.com/shreyanshhbharti" target="_blank" rel="noopener noreferrer" class="btn-text-action">
+                            <span>View on GitHub</span>
+                            <span class="link-arrow">↗</span>
+                        </a>
                     </div>
-                </details>
+                </div>
             </div>
         </section>
     </main>
 
     <!-- ========================================== -->
-    <!-- Footer                                     -->
+    <!-- 13. Giant Brand Footer                     -->
     <!-- ========================================== -->
-    <footer>
-        <div class="footer-brand">
-            <h3>CodeSage</h3>
-            <p>Learn programming by understanding, not memorizing.</p>
-            <small>© 2026 CodeSage. All rights reserved.</small>
+    <footer class="giant-brand-footer" id="giant-footer">
+        <div class="container footer-content-grid">
+            <div class="footer-brand-pane">
+                <a href="#hero" class="footer-brand-title" aria-label="CodeSage Home">
+                    <span class="footer-brand-symbol" aria-hidden="true">
+                        <svg viewBox="0 0 120 120" width="24" height="24" fill="currentColor">
+                            <path d="M 30 10 H 85 V 40 H 45 V 70 H 10 V 30 Z" />
+                            <path d="M 90 110 H 35 V 80 H 75 V 50 H 110 V 90 Z" />
+                        </svg>
+                    </span>
+                    <span>CodeSage</span>
+                </a>
+                <p class="footer-mission-copy">
+                    AI programming mentorship built around understanding. Learn how to find the answer, not just copy it.
+                </p>
+            </div>
+
+            <div class="footer-columns-group">
+                <div class="footer-col">
+                    <h4>Product</h4>
+                    <a href="#hero">Home</a>
+                    <a href="#story">Product</a>
+                    <a href="#process">How It Works</a>
+                    <a href="#developer-dna">Developer DNA</a>
+                    <a href="dashboard.html">Dashboard</a>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <a href="https://github.com/shreyanshhbharti" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
+                    <a href="#faq">FAQ</a>
+                    <a href="#hints">Progressive Hints</a>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Philosophy</h4>
+                    <p class="footer-quote">"Don't just get the answer. Learn how to find it."</p>
+                </div>
+            </div>
         </div>
 
-        <div class="footer-links">
-            <h4>Product</h4>
-            <a href="#features">Features</a>
-            <a href="#how-it-works">How It Works</a>
-            <a href="#developer-dna">Developer DNA</a>
+        <!-- Giant Typography Wordmark -->
+        <div class="giant-wordmark-strip" id="giant-wordmark">
+            <h2 class="giant-wordmark-title">CodeSage</h2>
         </div>
 
-        <div class="footer-links">
-            <h4>Resources</h4>
-            <a href="https://github.com/shreyanshhbharti" target="_blank" rel="noopener noreferrer">GitHub</a>
-            <a href="#">Documentation</a>
-            <a href="#">Roadmap</a>
-        </div>
-
-        <div class="footer-links">
-            <h4>Company</h4>
-            <a href="#">About</a>
-            <a href="#">Contact</a>
+        <div class="container footer-base-strip">
+            <span>© 2026 CodeSage · Crafted for thoughtful developers.</span>
+            <span>Built by Shreyansh Bharti</span>
         </div>
     </footer>
 
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script src="computer.js"></script>
 </body>
 </html>

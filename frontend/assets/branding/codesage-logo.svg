@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 120" width="100%" height="100%" fill="none">
+  <!-- 
+    CodeSage Primary Horizontal Brand Lockup
+    [Symbol] CodeSage
+  -->
+  <g fill="currentColor">
+    <!-- Brand Symbol (Offset Blocks defining Negative-Space S) -->
+    <path d="M 30 10 H 85 V 40 H 45 V 70 H 10 V 30 Z" />
+    <path d="M 90 110 H 35 V 80 H 75 V 50 H 110 V 90 Z" />
+    
+    <!-- Wordmark -->
+    <text x="142" y="78" 
+          font-family="'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" 
+          font-weight="700" 
+          font-size="60" 
+          letter-spacing="-1.8" 
+          fill="currentColor">CodeSage</text>
+  </g>
+</svg>

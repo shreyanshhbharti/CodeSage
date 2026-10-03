@@ -1,0 +1,6 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Top Anchor Form -->
+  <path d="M 22 16 H 74 C 77.31 16 80 18.69 80 22 V 42 C 80 44.21 78.21 46 76 46 H 48 C 43.58 46 40 49.58 40 54 V 56 H 24 C 21.79 56 20 54.21 20 52 V 22 C 20 18.69 22.69 16 26 16 Z" fill="currentColor"/>
+  <!-- Bottom Anchor Form (180deg Rotational Symmetry) -->
+  <path d="M 78 84 H 26 C 22.69 84 20 81.31 20 78 V 58 C 20 55.79 21.79 54 24 54 H 52 C 56.42 54 60 50.42 60 46 V 44 H 76 C 78.21 44 80 45.79 80 48 V 78 C 80 81.31 77.31 84 74 84 Z" fill="currentColor"/>
+</svg>
